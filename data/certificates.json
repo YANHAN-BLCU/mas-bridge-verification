@@ -1,0 +1,82 @@
+[
+  {
+    "model": "bridge",
+    "n": 2,
+    "base": true,
+    "step": true,
+    "implies_safe": true,
+    "states_checked": 27,
+    "invariant_states_checked": 16,
+    "witness": null
+  },
+  {
+    "model": "bridge",
+    "n": 3,
+    "base": true,
+    "step": true,
+    "implies_safe": true,
+    "states_checked": 108,
+    "invariant_states_checked": 44,
+    "witness": null
+  },
+  {
+    "model": "bridge",
+    "n": 4,
+    "base": true,
+    "step": true,
+    "implies_safe": true,
+    "states_checked": 405,
+    "invariant_states_checked": 112,
+    "witness": null
+  },
+  {
+    "model": "bridge",
+    "n": 5,
+    "base": true,
+    "step": true,
+    "implies_safe": true,
+    "states_checked": 1458,
+    "invariant_states_checked": 272,
+    "witness": null
+  },
+  {
+    "model": "quota",
+    "n": 2,
+    "base": true,
+    "step": true,
+    "implies_safe": true,
+    "states_checked": 16,
+    "invariant_states_checked": 9,
+    "witness": null
+  },
+  {
+    "model": "quota",
+    "n": 3,
+    "base": true,
+    "step": true,
+    "implies_safe": true,
+    "states_checked": 64,
+    "invariant_states_checked": 19,
+    "witness": null
+  },
+  {
+    "model": "quota",
+    "n": 4,
+    "base": true,
+    "step": true,
+    "implies_safe": true,
+    "states_checked": 256,
+    "invariant_states_checked": 33,
+    "witness": null
+  },
+  {
+    "model": "quota",
+    "n": 5,
+    "base": true,
+    "step": true,
+    "implies_safe": true,
+    "states_checked": 1024,
+    "invariant_states_checked": 51,
+    "witness": null
+  }
+]
