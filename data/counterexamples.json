@@ -367,7 +367,311 @@
       ]
     }
   ],
-  "quota_n3_local": [
+  "quota_n2_B1_local": [
+    {
+      "action": "initial",
+      "state": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "action": "consume(0)",
+      "state": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "action": "consume(1)",
+      "state": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    }
+  ],
+  "quota_n2_B1_check_then_commit": [
+    {
+      "action": "initial",
+      "state": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "action": "read_spare(0)",
+      "state": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "action": "read_spare(1)",
+      "state": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "action": "commit_cached(0)",
+      "state": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "action": "commit_cached(1)",
+      "state": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    }
+  ],
+  "quota_n3_B1_local": [
+    {
+      "action": "initial",
+      "state": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "action": "consume(0)",
+      "state": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "action": "consume(1)",
+      "state": [
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    }
+  ],
+  "quota_n3_B1_check_then_commit": [
+    {
+      "action": "initial",
+      "state": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "action": "read_spare(0)",
+      "state": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "action": "read_spare(1)",
+      "state": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "action": "commit_cached(0)",
+      "state": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "action": "commit_cached(1)",
+      "state": [
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    }
+  ],
+  "quota_n3_B2_local": [
     {
       "action": "initial",
       "state": [
@@ -449,7 +753,7 @@
       ]
     }
   ],
-  "quota_n3_pairwise": [
+  "quota_n3_B2_pairwise": [
     {
       "action": "initial",
       "state": [
@@ -531,7 +835,7 @@
       ]
     }
   ],
-  "quota_n3_check_then_commit": [
+  "quota_n3_B2_check_then_commit": [
     {
       "action": "initial",
       "state": [

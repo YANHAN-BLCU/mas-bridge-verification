@@ -5,5 +5,5 @@
   "state_limit": 2000000,
   "deterministic": true,
   "random_seed": null,
-  "models": "bridge: n=2..8; quota: n=2..8, B=2, r=1"
+  "models": "bridge: n=2..10; quota: n=2..8, B=1..4, r=1..2; static: n=2..8, B=1..5, r=1..3"
 }

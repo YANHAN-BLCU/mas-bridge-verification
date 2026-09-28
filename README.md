@@ -24,14 +24,15 @@ python make_report.py
 - `src/masverify.py`：有限状态模型、BFS 反例搜索和不变量检查
 - `run_experiments.py`：运行全部 49 组实验
 - `make_report.py`：由真实 CSV/JSON 结果生成报告和图表
-- `data/`：原始实验数据、反例和复现信息
+- `data/`：动态实验数据、静态容量扫描、反例和复现信息
 - `figures/`：结果图
 
 ## 结果摘要
 
-- 共运行 49 组配置，32 组发现安全反例。
-- 窄桥：local 和 cached check-then-enter 产生反例；atomic token 在 n=2–8 中未发现反例。
-- 配额：local、pairwise 和 cached commit 在 n≥3 时产生反例；atomic quota 在 n=2–8 中未发现反例。
+- 共运行 251 组动态配置和 105 组静态容量配置；动态配置中 149 组发现安全反例。
+- 窄桥覆盖 n=2–10：local 和 cached check-then-enter 产生反例；atomic token 未发现反例。
+- 配额覆盖 B=1–4、局部上限 r=1–2：local、pairwise 和 cached commit 在相应参数区间产生反例；atomic quota 未发现反例。
+- 静态容量扫描中 66 组显示两两约束不足以保证全局容量安全。
 - 8 组完整有限域桥接证书均通过。
 
 这些结果只适用于代码中定义的有限状态模型和动作语义。
