@@ -1,0 +1,5 @@
+case_id,model,status,target_property,target_violation,counterexample_steps,replay_status,replay_error,candidate_invariant_status,failed_obligation,witness_file
+C_stale_bridge,bridge,COUNTEREXAMPLE,SAFE,TARGET_UNSAFE,6,PASS,,FAIL,global_step,traces/C_stale_bridge.json
+C_early_release,bridge,COUNTEREXAMPLE,SAFE,TARGET_UNSAFE,7,PASS,,FAIL,global_step,traces/C_early_release.json
+C_non_atomic_quota,quota,COUNTEREXAMPLE,SAFE,TARGET_UNSAFE,6,PASS,,FAIL,global_step,traces/C_non_atomic_quota.json
+C_environment_write,bridge,COUNTEREXAMPLE,SAFE,TARGET_UNSAFE,7,PASS,,FAIL,global_step,traces/C_environment_write.json

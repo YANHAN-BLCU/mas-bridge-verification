@@ -1,0 +1,132 @@
+{
+  "config_id": "A_bridge_n2_local",
+  "steps": [
+    {
+      "action": "INITIAL",
+      "component": "INIT",
+      "before": null,
+      "after": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        -1
+      ],
+      "violation": "TARGET_UNSAFE"
+    },
+    {
+      "action": "Request[0]",
+      "component": "agent",
+      "before": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        -1
+      ],
+      "after": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        -1
+      ],
+      "violation": "TARGET_UNSAFE"
+    },
+    {
+      "action": "Enter[0]",
+      "component": "agent",
+      "before": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        -1
+      ],
+      "after": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        -1
+      ],
+      "violation": "TARGET_UNSAFE"
+    },
+    {
+      "action": "Request[1]",
+      "component": "agent",
+      "before": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        -1
+      ],
+      "after": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        -1
+      ],
+      "violation": "TARGET_UNSAFE"
+    },
+    {
+      "action": "Enter[1]",
+      "component": "agent",
+      "before": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        -1
+      ],
+      "after": [
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          0
+        ],
+        -1
+      ],
+      "violation": "TARGET_UNSAFE"
+    }
+  ],
+  "replay_status": "PASS",
+  "target_property": "sum(q_i==on)<=1"
+}

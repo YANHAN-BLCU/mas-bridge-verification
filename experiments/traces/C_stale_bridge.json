@@ -1,0 +1,187 @@
+{
+  "config_id": "C_stale_bridge",
+  "steps": [
+    {
+      "action": "INITIAL",
+      "component": "INIT",
+      "before": null,
+      "after": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        -1
+      ],
+      "violation": "TARGET_UNSAFE"
+    },
+    {
+      "action": "Request[0]",
+      "component": "agent",
+      "before": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        -1
+      ],
+      "after": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        -1
+      ],
+      "violation": "TARGET_UNSAFE"
+    },
+    {
+      "action": "Read[0]",
+      "component": "agent",
+      "before": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        -1
+      ],
+      "after": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        -1
+      ],
+      "violation": "TARGET_UNSAFE"
+    },
+    {
+      "action": "Request[1]",
+      "component": "agent",
+      "before": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        -1
+      ],
+      "after": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        -1
+      ],
+      "violation": "TARGET_UNSAFE"
+    },
+    {
+      "action": "Read[1]",
+      "component": "agent",
+      "before": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        -1
+      ],
+      "after": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        -1
+      ],
+      "violation": "TARGET_UNSAFE"
+    },
+    {
+      "action": "EnterCached[0]",
+      "component": "agent",
+      "before": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        -1
+      ],
+      "after": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        -1
+      ],
+      "violation": "TARGET_UNSAFE"
+    },
+    {
+      "action": "EnterCached[1]",
+      "component": "agent",
+      "before": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        -1
+      ],
+      "after": [
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          0
+        ],
+        -1
+      ],
+      "violation": "TARGET_UNSAFE"
+    }
+  ],
+  "replay_status": "PASS",
+  "failed_obligation": "global_step",
+  "variant": "bridge"
+}

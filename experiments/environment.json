@@ -1,0 +1,12 @@
+{
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "cpu": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "memory_gb": 31.627,
+  "git_commit": "c175cfea888e0d74dce2dbb65aeec31232e73b01",
+  "model_sha256": "52526871073f2fe2eee56113e48a63a3b7024796829d43c6bd82500bda47186c",
+  "runner_sha256": "31e7cddfa606cf150fc7a0439135bfba46b73335fab51d145906c0220d7b7058",
+  "deterministic": true,
+  "random_seed": null,
+  "command": "python -m experiments.run_all"
+}

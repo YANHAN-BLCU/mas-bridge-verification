@@ -1,0 +1,265 @@
+{
+  "config_id": "C_non_atomic_quota",
+  "steps": [
+    {
+      "action": "INITIAL",
+      "component": "INIT",
+      "before": null,
+      "after": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "violation": "TARGET_UNSAFE"
+    },
+    {
+      "action": "ReadSpare[0]",
+      "component": "agent",
+      "before": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "after": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "violation": "TARGET_UNSAFE"
+    },
+    {
+      "action": "CommitCached[0]",
+      "component": "agent",
+      "before": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "after": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "violation": "TARGET_UNSAFE"
+    },
+    {
+      "action": "ReadSpare[1]",
+      "component": "agent",
+      "before": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "after": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "violation": "TARGET_UNSAFE"
+    },
+    {
+      "action": "ReadSpare[2]",
+      "component": "agent",
+      "before": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "after": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "violation": "TARGET_UNSAFE"
+    },
+    {
+      "action": "CommitCached[1]",
+      "component": "agent",
+      "before": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "after": [
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "violation": "TARGET_UNSAFE"
+    },
+    {
+      "action": "CommitCached[2]",
+      "component": "agent",
+      "before": [
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "after": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "violation": "TARGET_UNSAFE"
+    }
+  ],
+  "replay_status": "PASS",
+  "failed_obligation": "global_step",
+  "variant": "quota"
+}

@@ -1,0 +1,9 @@
+{
+  "search_configs": 251,
+  "replayed_counterexamples": 165,
+  "static_configs": 105,
+  "static_witnesses": 66,
+  "certificate_rows": 140,
+  "negative_cases": 4,
+  "status": "PASS"
+}

@@ -1,0 +1,19 @@
+{
+  "config_id": "A_static_n4_B4_r3",
+  "steps": [
+    {
+      "action": "STATIC_WITNESS",
+      "before": null,
+      "after": [
+        0,
+        1,
+        1,
+        3
+      ],
+      "violation": "GLOBAL_CAPACITY"
+    }
+  ],
+  "local": "all p_i<=r",
+  "pairwise": "all p_i+p_j<=B",
+  "global": "sum(p)<=B"
+}
