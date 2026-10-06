@@ -154,17 +154,20 @@ class Model:
 
 
 def bridge_model(n, mutation=None):
-    edges = list(itertools.combinations(range(n), 2))
+    # Responsibility is directed; reverse arcs for the same symmetric
+    # constraint share one kappa class and one state variable.
+    kappa_classes = list(itertools.combinations(range(n), 2))
+    responsibility_arcs = [(u, v) for u in range(n) for v in range(n) if u != v]
     domains = {f"q_{i + 1}": (0, 1, 2) for i in range(n)}
     domains["owner"] = tuple(range(-1, n))
-    domains.update({f"z_{u + 1}_{v + 1}": (0, 1, 2) for u, v in edges})
+    domains.update({f"z_kappa_{u + 1}_{v + 1}": (0, 1, 2) for u, v in kappa_classes})
     clauses = [Clause(f"tau_{i + 1}", "ownership",
                       E("or", E("not", ON(f"q_{i + 1}")),
                         E("eq", V("owner"), C(i)))) for i in range(n)]
-    clauses += [Clause(f"zeta_{u + 1}_{v + 1}", "edge_consistency",
-                       E("eq", V(f"z_{u + 1}_{v + 1}"),
+    clauses += [Clause(f"zeta_kappa_{u + 1}_{v + 1}", "kappa_consistency",
+                       E("eq", V(f"z_kappa_{u + 1}_{v + 1}"),
                          E("add", indicator(ON(f"q_{u + 1}")),
-                           indicator(ON(f"q_{v + 1}"))))) for u, v in edges]
+                           indicator(ON(f"q_{v + 1}"))))) for u, v in kappa_classes]
     actions = []
     for i in range(n):
         q = f"q_{i + 1}"
@@ -180,10 +183,10 @@ def bridge_model(n, mutation=None):
         enter_updates = {q: C(2)}
         exit_updates = {q: C(0)}
         refresh_updates = {}
-        for u, v in edges:
+        for u, v in kappa_classes:
             if i in (u, v):
                 other = v if u == i else u
-                z = f"z_{u + 1}_{v + 1}"
+                z = f"z_kappa_{u + 1}_{v + 1}"
                 other_on = indicator(ON(f"q_{other + 1}"))
                 enter_updates[z] = E("add", C(1), other_on)
                 exit_updates[z] = other_on
@@ -212,9 +215,10 @@ def bridge_model(n, mutation=None):
     return Model(f"bridge_n{n}" + (f"_{mutation}" if mutation else ""), domains,
                  actions, clauses, initial, target,
                  {"q": "0=away,1=wait,2=on", "owner": "-1=free;0..n-1=agent",
-                  "edge_record": "on-indicator sum of endpoints",
-                  "provided_template_families": ["ownership", "edge_consistency"]}, mutation)
-
+                  "responsibility_arcs": [f"{u + 1}->{v + 1}" for u, v in responsibility_arcs],
+                  "kappa_classes": [f"kappa_{u + 1}_{v + 1}" for u, v in kappa_classes],
+                  "symmetric_arc_attribute": "reverse arcs share kappa class; sym=1",
+                  "provided_template_families": ["ownership", "kappa_consistency"]}, mutation)
 
 def capacity_model(n, maximum, mutation=None):
     # Capacity is maximum, deliberately smaller than n*maximum.
@@ -582,7 +586,7 @@ def run_model(model):
         mutation_labels = {
             "missing_ownership_guard": "guard_reads_no_owner_on_faulty_enter",
             "early_release": "release_omits_on_state_exclusion",
-            "split_refresh": "node_update_and_edge_refresh_are_separate_transitions",
+            "split_refresh": "node_update_and_kappa_refresh_are_separate_transitions",
             "environment_overwrite": "environment_is_an_actual_additional_owner_writer",
             "missing_template": "provided_template_library_is_incomplete_for_static_entailment",
             "unsafe_reclaim": "quota_reclaim_omits_consumption_coverage_guard",

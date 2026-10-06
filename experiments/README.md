@@ -44,7 +44,7 @@ python make_publication_charts.py  # 可选：由 A/B/C CSV 生成 PNG/PDF 图
 - `results/capacity_scan.csv`：A 的 105 个静态配置，完整枚举 `p∈{0,…,r}^n`，保存第一个两两安全但全局不安全见证。
 - `results/certificate_obligations.csv`：B 的 8 个配置中每个动作的初始化、蕴含、上下文、假设闭合、受影响/未受影响保持、干扰和全局一步义务。
 - `results/negative_tests.csv`：C 的四个负面变体，区分目标性质、候选不变量和失效义务。
-- `results/minimal_context_results.json`：D 的显式边窄桥、最小证明上下文、276 组泛化上下文核验。
+- `results/minimal_context_results.json`：D 的显式共享类 κ 窄桥、最小证明上下文、276 组泛化上下文核验。
 - `results/certificate_generation_results.json`：D 的支持/读写推断、4,032 项模板筛选、2,000 对容量更新核验、失败诊断和必要变体。
 - `traces/*.json`：每一步动作、前状态、后状态和违反性质，可由 `verify_outputs` 独立重放。
 - `figures/`：可选的 A/B/C 论文图，PNG 为 300 DPI，同时输出矢量 PDF。

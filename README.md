@@ -27,7 +27,7 @@ python -m experiments.certificate_generation_artifact
 - `experiments/models.py`：窄桥/配额状态、动作语义、完整 BFS 与轨迹重放
 - `experiments/run_all.py`：运行实验 A、B、C
 - `experiments/verify_outputs.py`：独立重放全部反例并核对静态见证和证书表
-- `experiments/minimal_context_artifact.py`：实验 D 的显式边模型与最小上下文综合
+- `experiments/minimal_context_artifact.py`：实验 D 的有向责任弧与显式共享类 κ 模型及最小上下文综合
 - `experiments/certificate_generation_artifact.py`：实验 D 的模板筛选、结构推断和失败诊断
 - `experiments/make_tables_figures.py`：由真实 CSV/JSON 结果生成报告
 - `experiments/results/`：搜索、静态枚举、动作级证书和负例结果

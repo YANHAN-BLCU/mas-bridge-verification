@@ -4,8 +4,8 @@ Python 3 standard library only. No external files or network are read.
 Run: python -m experiments.minimal_context_artifact
 The output JSON is written to experiments/results/.
 
-The model includes explicit edge variables and every state in the declared
-Cartesian domain, including inconsistent and unreachable states. Proof-context
+The model includes explicit shared-class variables indexed by kappa and every state in the declared
+Cartesian domain, including inconsistent and unreachable states. Responsibility arcs remain directed; two reverse arcs may share one kappa class. Proof-context
 failures are one-step induction failures, not reachable safety counterexamples.
 """
 
@@ -61,19 +61,19 @@ def synthesize_context(bad_source_masks: set[int], size: int) -> dict:
         conflicts.append(witness)
 
 
-def truth_mask(q: tuple[int, ...], owner: int, z: tuple[int, ...], edges) -> int:
+def truth_mask(q: tuple[int, ...], owner: int, z: tuple[int, ...], kappa_classes) -> int:
     false_mask = 0
     n = len(q)
     for i in range(n):
         if q[i] == 2 and owner != i:
             false_mask |= 1 << i
-    for index, (u, v) in enumerate(edges):
+    for index, (u, v) in enumerate(kappa_classes):
         if z[index] != int(q[u] == 2) + int(q[v] == 2):
             false_mask |= 1 << (n + index)
     return false_mask
 
 
-def slow_successor(q, owner, z, edges, kind, agent):
+def slow_successor(q, owner, z, kappa_classes, kind, agent):
     """Independent explicit-state update used to check the fast oracle."""
     new_q = list(q)
     new_z = list(z)
@@ -91,7 +91,7 @@ def slow_successor(q, owner, z, edges, kind, agent):
     else:
         raise ValueError(kind)
     if kind in {"Enter", "Exit"}:
-        for index, (u, v) in enumerate(edges):
+        for index, (u, v) in enumerate(kappa_classes):
             if agent in (u, v):
                 new_z[index] = int(new_q[u] == 2) + int(new_q[v] == 2)
     return tuple(new_q), new_owner, tuple(new_z)
@@ -99,14 +99,15 @@ def slow_successor(q, owner, z, edges, kind, agent):
 
 def verify_bridge(n: int) -> dict:
     started = time.perf_counter()
-    edges = list(itertools.combinations(range(n), 2))
+    kappa_classes = list(itertools.combinations(range(n), 2))
+    responsibility_arcs = [(u, v) for u in range(n) for v in range(n) if u != v]
     clause_names = [f"tau_{i + 1}" for i in range(n)] + [
-        f"zeta_{u + 1}_{v + 1}" for u, v in edges
+        f"zeta_kappa_{u + 1}_{v + 1}" for u, v in kappa_classes
     ]
     m = len(clause_names)
     token_bits = (1 << n) - 1
     incident = [
-        sum(1 << (n + e) for e, edge in enumerate(edges) if i in edge)
+        sum(1 << (n + e) for e, kappa_class in enumerate(kappa_classes) if i in kappa_class)
         for i in range(n)
     ]
     affected = {}
@@ -127,12 +128,12 @@ def verify_bridge(n: int) -> dict:
     frame_checks = 0
     explicit_endpoint_checks = 0
     implication_passed = True
-    initial = ((0,) * n, -1, (0,) * len(edges))
-    assert truth_mask(*initial, edges) == 0
+    initial = ((0,) * n, -1, (0,) * len(kappa_classes))
+    assert truth_mask(*initial, kappa_classes) == 0
 
     for q in itertools.product(range(3), repeat=n):
         on_mask = sum(1 << i for i in range(n) if q[i] == 2)
-        actual_edges = tuple(int(q[u] == 2) + int(q[v] == 2) for u, v in edges)
+        actual_edges = tuple(int(q[u] == 2) + int(q[v] == 2) for u, v in kappa_classes)
         for owner in range(-1, n):
             pre_tokens = on_mask & ~(1 << owner) if owner >= 0 else on_mask
             enabled = []
@@ -147,7 +148,7 @@ def verify_bridge(n: int) -> dict:
                     enabled.append(("Exit", i, pre_tokens & ~(1 << i)))
                 if owner == i and q[i] != 2:
                     enabled.append(("Release", i, on_mask))
-            for z in itertools.product(range(3), repeat=len(edges)):
+            for z in itertools.product(range(3), repeat=len(kappa_classes)):
                 states += 1
                 pre_edges = sum(
                     1 << (n + e) for e, value in enumerate(z)
@@ -169,8 +170,8 @@ def verify_bridge(n: int) -> dict:
                     assert ((pre_false ^ post_false) & ~aff) == 0
                     frame_checks += 1
                     if n <= 3:
-                        endpoint = slow_successor(q, owner, z, edges, kind, agent)
-                        assert truth_mask(*endpoint, edges) == post_false
+                        endpoint = slow_successor(q, owner, z, kappa_classes, kind, agent)
+                        assert truth_mask(*endpoint, kappa_classes) == post_false
                         explicit_endpoint_checks += 1
                     bad_targets = post_false & aff
                     while bad_targets:
@@ -200,13 +201,16 @@ def verify_bridge(n: int) -> dict:
         })
     pairs = len(records)
     selected = sum(record["cardinality"] for record in records)
-    assert states == (3 ** n) * (n + 1) * (3 ** len(edges))
+    assert states == (3 ** n) * (n + 1) * (3 ** len(kappa_classes))
     assert pairs == 5 * n * n
     assert selected == 3 * n * (n - 1)
     assert invariant_states == (n + 1) * (2 ** n) + n * (2 ** (n - 1))
     return {
         "n": n,
-        "explicit_edge_variables": len(edges),
+        "responsibility_arcs": len(responsibility_arcs),
+        "shared_kappa_variables": len(kappa_classes),
+        "kappa_classes": [f"kappa_{u + 1}_{v + 1}" for u, v in kappa_classes],
+        "symmetric_arc_attribute": "reverse arcs share kappa class; sym=1",
         "candidate_clauses": m,
         "declared_domain_states": states,
         "enumerated_states": states,

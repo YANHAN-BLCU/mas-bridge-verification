@@ -3,14 +3,14 @@
   "platform": "Windows-11-10.0.26200-SP0",
   "cpu": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
   "memory_gb": 31.627,
-  "git_commit": "457e5a73357b1da846b46d67ff52b8ccbfd45a22",
+  "git_commit": "53f1c0ec0a12b7884aabccb1a6939b0f505e42a6",
   "model_sha256": "52526871073f2fe2eee56113e48a63a3b7024796829d43c6bd82500bda47186c",
   "runner_sha256": "43f0ebc4d09a2fb5ba4bb9000f85abdbcb1a7015494b1ce12aca809d513ee4f4",
   "artifact_sha256": {
-    "minimal_context_artifact.py": "305e32917d3f274080391fa1d4208987a3b7619a3bc6a74b4d0d7468b6806923",
-    "certificate_generation_artifact.py": "ad74534cd8c027b4494574646e6e60c9159420b3242b8de80897333ec484f101",
+    "minimal_context_artifact.py": "96e2356391ac0890c860c70e0a9227603bc4f0cb1810c3d27e13a2101655687c",
+    "certificate_generation_artifact.py": "0e61327fe4b676db1902dbdd5b52d60fb2ab3d5bd43c415ef3d84732379688d7",
     "verify_outputs.py": "1d9c6816e6a568eb1d5901b75a5af0afec91b57a9533d1b3cda46877c45aa187",
-    "make_tables_figures.py": "f1807da74a2c3799942044f2193e25c302c9b9e2f9b28d67ffd2afa1bf394c7a"
+    "make_tables_figures.py": "8b3afeb03e12dae5a4574446397f72e1fa7b42a96a2080063e6e2991ddc407e2"
   },
   "deterministic": true,
   "random_seed": null,

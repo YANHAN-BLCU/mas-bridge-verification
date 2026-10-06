@@ -114,17 +114,24 @@
       "role_annotations": {
         "q": "0=away,1=wait,2=on",
         "owner": "-1=free;0..n-1=agent",
-        "edge_record": "on-indicator sum of endpoints",
+        "responsibility_arcs": [
+          "1->2",
+          "2->1"
+        ],
+        "kappa_classes": [
+          "kappa_1_2"
+        ],
+        "symmetric_arc_attribute": "reverse arcs share kappa class; sym=1",
         "provided_template_families": [
           "ownership",
-          "edge_consistency"
+          "kappa_consistency"
         ]
       },
       "initial": {
         "q_1": 0,
         "q_2": 0,
         "owner": -1,
-        "z_1_2": 0
+        "z_kappa_1_2": 0
       },
       "target": [
         "le",
@@ -221,7 +228,7 @@
             "unique_writer_component": "manager",
             "shared_writer": false
           },
-          "z_1_2": {
+          "z_kappa_1_2": {
             "domain": [
               0,
               1,
@@ -317,13 +324,13 @@
             ]
           },
           {
-            "name": "zeta_1_2",
-            "family": "edge_consistency",
+            "name": "zeta_kappa_1_2",
+            "family": "kappa_consistency",
             "expression": [
               "eq",
               [
                 "var",
-                "z_1_2"
+                "z_kappa_1_2"
               ],
               [
                 "add",
@@ -376,7 +383,7 @@
             "support": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "writer_components": [
               "agent_1",
@@ -414,12 +421,12 @@
             "frame_variables": [
               "q_2",
               "owner",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_1",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -466,7 +473,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -507,7 +514,7 @@
                 "const",
                 2
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "add",
                 [
                   "const",
@@ -544,7 +551,7 @@
             ],
             "inferred_write": [
               "q_1",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_2",
@@ -553,7 +560,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_1",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -575,7 +582,7 @@
                 "const",
                 0
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "ite",
                 [
                   "eq",
@@ -604,7 +611,7 @@
             ],
             "inferred_write": [
               "q_1",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_2",
@@ -613,7 +620,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_1",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -660,7 +667,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -697,12 +704,12 @@
             "frame_variables": [
               "q_1",
               "owner",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -749,7 +756,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -790,7 +797,7 @@
                 "const",
                 2
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "add",
                 [
                   "const",
@@ -827,7 +834,7 @@
             ],
             "inferred_write": [
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_1",
@@ -836,7 +843,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -858,7 +865,7 @@
                 "const",
                 0
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "ite",
                 [
                   "eq",
@@ -887,7 +894,7 @@
             ],
             "inferred_write": [
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_1",
@@ -896,7 +903,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -943,7 +950,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -1027,11 +1034,11 @@
             "declared_write": [
               "owner",
               "q_1",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "inferred_write": [
               "q_1",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "extra": [
               "owner"
@@ -1057,7 +1064,7 @@
         "retained": [
           "tau_1",
           "tau_2",
-          "zeta_1_2"
+          "zeta_kappa_1_2"
         ],
         "removed": [],
         "rounds_including_terminal_check": 1,
@@ -1127,16 +1134,16 @@
           },
           {
             "action": "Request_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -1190,7 +1197,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -1199,7 +1206,7 @@
           },
           {
             "action": "Enter_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -1207,7 +1214,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -1224,7 +1231,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -1233,14 +1240,14 @@
           },
           {
             "action": "Exit_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -1299,16 +1306,16 @@
           },
           {
             "action": "Request_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -1362,7 +1369,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -1371,7 +1378,7 @@
           },
           {
             "action": "Enter_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -1379,7 +1386,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -1396,7 +1403,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -1405,14 +1412,14 @@
           },
           {
             "action": "Exit_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -1460,7 +1467,7 @@
         "retained_clause_names": [
           "tau_1",
           "tau_2",
-          "zeta_1_2"
+          "zeta_kappa_1_2"
         ],
         "all_retained_minimum_contexts_valid": true,
         "safety_entailment_passed": true,
@@ -1485,16 +1492,16 @@
           },
           {
             "action": "Request_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -1548,7 +1555,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -1557,7 +1564,7 @@
           },
           {
             "action": "Enter_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -1565,7 +1572,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -1582,7 +1589,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -1591,14 +1598,14 @@
           },
           {
             "action": "Exit_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -1657,16 +1664,16 @@
           },
           {
             "action": "Request_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -1720,7 +1727,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -1729,7 +1736,7 @@
           },
           {
             "action": "Enter_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -1737,7 +1744,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -1754,7 +1761,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -1763,14 +1770,14 @@
           },
           {
             "action": "Exit_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -1831,11 +1838,11 @@
               "declared_write": [
                 "owner",
                 "q_1",
-                "z_1_2"
+                "z_kappa_1_2"
               ],
               "inferred_write": [
                 "q_1",
-                "z_1_2"
+                "z_kappa_1_2"
               ],
               "extra": [
                 "owner"
@@ -1850,7 +1857,7 @@
         {
           "kind": "shared_writer_interference",
           "evidence": {
-            "z_1_2": [
+            "z_kappa_1_2": [
               "agent_1",
               "agent_2"
             ]
@@ -1872,17 +1879,24 @@
       "role_annotations": {
         "q": "0=away,1=wait,2=on",
         "owner": "-1=free;0..n-1=agent",
-        "edge_record": "on-indicator sum of endpoints",
+        "responsibility_arcs": [
+          "1->2",
+          "2->1"
+        ],
+        "kappa_classes": [
+          "kappa_1_2"
+        ],
+        "symmetric_arc_attribute": "reverse arcs share kappa class; sym=1",
         "provided_template_families": [
           "ownership",
-          "edge_consistency"
+          "kappa_consistency"
         ]
       },
       "initial": {
         "q_1": 0,
         "q_2": 0,
         "owner": -1,
-        "z_1_2": 0
+        "z_kappa_1_2": 0
       },
       "target": [
         "le",
@@ -1979,7 +1993,7 @@
             "unique_writer_component": "manager",
             "shared_writer": false
           },
-          "z_1_2": {
+          "z_kappa_1_2": {
             "domain": [
               0,
               1,
@@ -2075,13 +2089,13 @@
             ]
           },
           {
-            "name": "zeta_1_2",
-            "family": "edge_consistency",
+            "name": "zeta_kappa_1_2",
+            "family": "kappa_consistency",
             "expression": [
               "eq",
               [
                 "var",
-                "z_1_2"
+                "z_kappa_1_2"
               ],
               [
                 "add",
@@ -2134,7 +2148,7 @@
             "support": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "writer_components": [
               "agent_1",
@@ -2172,12 +2186,12 @@
             "frame_variables": [
               "q_2",
               "owner",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_1",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -2224,7 +2238,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -2265,7 +2279,7 @@
                 "const",
                 2
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "add",
                 [
                   "const",
@@ -2302,7 +2316,7 @@
             ],
             "inferred_write": [
               "q_1",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_2",
@@ -2311,7 +2325,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_1",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -2333,7 +2347,7 @@
                 "const",
                 0
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "ite",
                 [
                   "eq",
@@ -2362,7 +2376,7 @@
             ],
             "inferred_write": [
               "q_1",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_2",
@@ -2371,7 +2385,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_1",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -2418,7 +2432,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -2455,12 +2469,12 @@
             "frame_variables": [
               "q_1",
               "owner",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -2507,7 +2521,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -2548,7 +2562,7 @@
                 "const",
                 2
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "add",
                 [
                   "const",
@@ -2585,7 +2599,7 @@
             ],
             "inferred_write": [
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_1",
@@ -2594,7 +2608,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -2616,7 +2630,7 @@
                 "const",
                 0
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "ite",
                 [
                   "eq",
@@ -2645,7 +2659,7 @@
             ],
             "inferred_write": [
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_1",
@@ -2654,7 +2668,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -2701,7 +2715,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -2797,7 +2811,7 @@
         "retained": [
           "tau_1",
           "tau_2",
-          "zeta_1_2"
+          "zeta_kappa_1_2"
         ],
         "removed": [],
         "rounds_including_terminal_check": 1,
@@ -2867,16 +2881,16 @@
           },
           {
             "action": "Request_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -2930,7 +2944,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -2939,7 +2953,7 @@
           },
           {
             "action": "Enter_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -2947,7 +2961,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -2964,7 +2978,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -2973,14 +2987,14 @@
           },
           {
             "action": "Exit_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -3039,16 +3053,16 @@
           },
           {
             "action": "Request_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -3102,7 +3116,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -3111,7 +3125,7 @@
           },
           {
             "action": "Enter_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -3119,7 +3133,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -3136,7 +3150,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -3145,14 +3159,14 @@
           },
           {
             "action": "Exit_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -3200,7 +3214,7 @@
         "retained_clause_names": [
           "tau_1",
           "tau_2",
-          "zeta_1_2"
+          "zeta_kappa_1_2"
         ],
         "all_retained_minimum_contexts_valid": true,
         "safety_entailment_passed": true,
@@ -3225,16 +3239,16 @@
           },
           {
             "action": "Request_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -3288,7 +3302,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -3297,7 +3311,7 @@
           },
           {
             "action": "Enter_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -3305,7 +3319,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -3322,7 +3336,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -3331,14 +3345,14 @@
           },
           {
             "action": "Exit_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -3397,16 +3411,16 @@
           },
           {
             "action": "Request_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -3460,7 +3474,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -3469,7 +3483,7 @@
           },
           {
             "action": "Enter_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -3477,7 +3491,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -3494,7 +3508,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -3503,14 +3517,14 @@
           },
           {
             "action": "Exit_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -3566,7 +3580,7 @@
         {
           "kind": "shared_writer_interference",
           "evidence": {
-            "z_1_2": [
+            "z_kappa_1_2": [
               "agent_1",
               "agent_2"
             ]
@@ -3581,10 +3595,23 @@
       "role_annotations": {
         "q": "0=away,1=wait,2=on",
         "owner": "-1=free;0..n-1=agent",
-        "edge_record": "on-indicator sum of endpoints",
+        "responsibility_arcs": [
+          "1->2",
+          "1->3",
+          "2->1",
+          "2->3",
+          "3->1",
+          "3->2"
+        ],
+        "kappa_classes": [
+          "kappa_1_2",
+          "kappa_1_3",
+          "kappa_2_3"
+        ],
+        "symmetric_arc_attribute": "reverse arcs share kappa class; sym=1",
         "provided_template_families": [
           "ownership",
-          "edge_consistency"
+          "kappa_consistency"
         ]
       },
       "initial": {
@@ -3592,9 +3619,9 @@
         "q_2": 0,
         "q_3": 0,
         "owner": -1,
-        "z_1_2": 0,
-        "z_1_3": 0,
-        "z_2_3": 0
+        "z_kappa_1_2": 0,
+        "z_kappa_1_3": 0,
+        "z_kappa_2_3": 0
       },
       "target": [
         "le",
@@ -3726,7 +3753,7 @@
             "unique_writer_component": "manager",
             "shared_writer": false
           },
-          "z_1_2": {
+          "z_kappa_1_2": {
             "domain": [
               0,
               1,
@@ -3739,7 +3766,7 @@
             "unique_writer_component": null,
             "shared_writer": true
           },
-          "z_1_3": {
+          "z_kappa_1_3": {
             "domain": [
               0,
               1,
@@ -3752,7 +3779,7 @@
             "unique_writer_component": null,
             "shared_writer": true
           },
-          "z_2_3": {
+          "z_kappa_2_3": {
             "domain": [
               0,
               1,
@@ -3888,13 +3915,13 @@
             ]
           },
           {
-            "name": "zeta_1_2",
-            "family": "edge_consistency",
+            "name": "zeta_kappa_1_2",
+            "family": "kappa_consistency",
             "expression": [
               "eq",
               [
                 "var",
-                "z_1_2"
+                "z_kappa_1_2"
               ],
               [
                 "add",
@@ -3947,7 +3974,7 @@
             "support": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "writer_components": [
               "agent_1",
@@ -3955,13 +3982,13 @@
             ]
           },
           {
-            "name": "zeta_1_3",
-            "family": "edge_consistency",
+            "name": "zeta_kappa_1_3",
+            "family": "kappa_consistency",
             "expression": [
               "eq",
               [
                 "var",
-                "z_1_3"
+                "z_kappa_1_3"
               ],
               [
                 "add",
@@ -4014,7 +4041,7 @@
             "support": [
               "q_1",
               "q_3",
-              "z_1_3"
+              "z_kappa_1_3"
             ],
             "writer_components": [
               "agent_1",
@@ -4022,13 +4049,13 @@
             ]
           },
           {
-            "name": "zeta_2_3",
-            "family": "edge_consistency",
+            "name": "zeta_kappa_2_3",
+            "family": "kappa_consistency",
             "expression": [
               "eq",
               [
                 "var",
-                "z_2_3"
+                "z_kappa_2_3"
               ],
               [
                 "add",
@@ -4081,7 +4108,7 @@
             "support": [
               "q_2",
               "q_3",
-              "z_2_3"
+              "z_kappa_2_3"
             ],
             "writer_components": [
               "agent_2",
@@ -4120,15 +4147,15 @@
               "q_2",
               "q_3",
               "owner",
-              "z_1_2",
-              "z_1_3",
-              "z_2_3"
+              "z_kappa_1_2",
+              "z_kappa_1_3",
+              "z_kappa_2_3"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_1",
-              "zeta_1_2",
-              "zeta_1_3"
+              "zeta_kappa_1_2",
+              "zeta_kappa_1_3"
             ]
           },
           {
@@ -4176,9 +4203,9 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_1_3",
-              "z_2_3"
+              "z_kappa_1_2",
+              "z_kappa_1_3",
+              "z_kappa_2_3"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -4220,7 +4247,7 @@
                 "const",
                 2
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "add",
                 [
                   "const",
@@ -4249,7 +4276,7 @@
                   ]
                 ]
               ],
-              "z_1_3": [
+              "z_kappa_1_3": [
                 "add",
                 [
                   "const",
@@ -4287,20 +4314,20 @@
             ],
             "inferred_write": [
               "q_1",
-              "z_1_2",
-              "z_1_3"
+              "z_kappa_1_2",
+              "z_kappa_1_3"
             ],
             "frame_variables": [
               "q_2",
               "q_3",
               "owner",
-              "z_2_3"
+              "z_kappa_2_3"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_1",
-              "zeta_1_2",
-              "zeta_1_3"
+              "zeta_kappa_1_2",
+              "zeta_kappa_1_3"
             ]
           },
           {
@@ -4322,7 +4349,7 @@
                 "const",
                 0
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "ite",
                 [
                   "eq",
@@ -4344,7 +4371,7 @@
                   0
                 ]
               ],
-              "z_1_3": [
+              "z_kappa_1_3": [
                 "ite",
                 [
                   "eq",
@@ -4374,20 +4401,20 @@
             ],
             "inferred_write": [
               "q_1",
-              "z_1_2",
-              "z_1_3"
+              "z_kappa_1_2",
+              "z_kappa_1_3"
             ],
             "frame_variables": [
               "q_2",
               "q_3",
               "owner",
-              "z_2_3"
+              "z_kappa_2_3"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_1",
-              "zeta_1_2",
-              "zeta_1_3"
+              "zeta_kappa_1_2",
+              "zeta_kappa_1_3"
             ]
           },
           {
@@ -4435,9 +4462,9 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_1_3",
-              "z_2_3"
+              "z_kappa_1_2",
+              "z_kappa_1_3",
+              "z_kappa_2_3"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -4476,15 +4503,15 @@
               "q_1",
               "q_3",
               "owner",
-              "z_1_2",
-              "z_1_3",
-              "z_2_3"
+              "z_kappa_1_2",
+              "z_kappa_1_3",
+              "z_kappa_2_3"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2",
-              "zeta_2_3"
+              "zeta_kappa_1_2",
+              "zeta_kappa_2_3"
             ]
           },
           {
@@ -4532,9 +4559,9 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_1_3",
-              "z_2_3"
+              "z_kappa_1_2",
+              "z_kappa_1_3",
+              "z_kappa_2_3"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -4576,7 +4603,7 @@
                 "const",
                 2
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "add",
                 [
                   "const",
@@ -4605,7 +4632,7 @@
                   ]
                 ]
               ],
-              "z_2_3": [
+              "z_kappa_2_3": [
                 "add",
                 [
                   "const",
@@ -4643,20 +4670,20 @@
             ],
             "inferred_write": [
               "q_2",
-              "z_1_2",
-              "z_2_3"
+              "z_kappa_1_2",
+              "z_kappa_2_3"
             ],
             "frame_variables": [
               "q_1",
               "q_3",
               "owner",
-              "z_1_3"
+              "z_kappa_1_3"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2",
-              "zeta_2_3"
+              "zeta_kappa_1_2",
+              "zeta_kappa_2_3"
             ]
           },
           {
@@ -4678,7 +4705,7 @@
                 "const",
                 0
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "ite",
                 [
                   "eq",
@@ -4700,7 +4727,7 @@
                   0
                 ]
               ],
-              "z_2_3": [
+              "z_kappa_2_3": [
                 "ite",
                 [
                   "eq",
@@ -4730,20 +4757,20 @@
             ],
             "inferred_write": [
               "q_2",
-              "z_1_2",
-              "z_2_3"
+              "z_kappa_1_2",
+              "z_kappa_2_3"
             ],
             "frame_variables": [
               "q_1",
               "q_3",
               "owner",
-              "z_1_3"
+              "z_kappa_1_3"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2",
-              "zeta_2_3"
+              "zeta_kappa_1_2",
+              "zeta_kappa_2_3"
             ]
           },
           {
@@ -4791,9 +4818,9 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_1_3",
-              "z_2_3"
+              "z_kappa_1_2",
+              "z_kappa_1_3",
+              "z_kappa_2_3"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -4832,15 +4859,15 @@
               "q_1",
               "q_2",
               "owner",
-              "z_1_2",
-              "z_1_3",
-              "z_2_3"
+              "z_kappa_1_2",
+              "z_kappa_1_3",
+              "z_kappa_2_3"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_3",
-              "zeta_1_3",
-              "zeta_2_3"
+              "zeta_kappa_1_3",
+              "zeta_kappa_2_3"
             ]
           },
           {
@@ -4888,9 +4915,9 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_1_3",
-              "z_2_3"
+              "z_kappa_1_2",
+              "z_kappa_1_3",
+              "z_kappa_2_3"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -4932,7 +4959,7 @@
                 "const",
                 2
               ],
-              "z_1_3": [
+              "z_kappa_1_3": [
                 "add",
                 [
                   "const",
@@ -4961,7 +4988,7 @@
                   ]
                 ]
               ],
-              "z_2_3": [
+              "z_kappa_2_3": [
                 "add",
                 [
                   "const",
@@ -4999,20 +5026,20 @@
             ],
             "inferred_write": [
               "q_3",
-              "z_1_3",
-              "z_2_3"
+              "z_kappa_1_3",
+              "z_kappa_2_3"
             ],
             "frame_variables": [
               "q_1",
               "q_2",
               "owner",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_3",
-              "zeta_1_3",
-              "zeta_2_3"
+              "zeta_kappa_1_3",
+              "zeta_kappa_2_3"
             ]
           },
           {
@@ -5034,7 +5061,7 @@
                 "const",
                 0
               ],
-              "z_1_3": [
+              "z_kappa_1_3": [
                 "ite",
                 [
                   "eq",
@@ -5056,7 +5083,7 @@
                   0
                 ]
               ],
-              "z_2_3": [
+              "z_kappa_2_3": [
                 "ite",
                 [
                   "eq",
@@ -5086,20 +5113,20 @@
             ],
             "inferred_write": [
               "q_3",
-              "z_1_3",
-              "z_2_3"
+              "z_kappa_1_3",
+              "z_kappa_2_3"
             ],
             "frame_variables": [
               "q_1",
               "q_2",
               "owner",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_3",
-              "zeta_1_3",
-              "zeta_2_3"
+              "zeta_kappa_1_3",
+              "zeta_kappa_2_3"
             ]
           },
           {
@@ -5147,9 +5174,9 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_1_3",
-              "z_2_3"
+              "z_kappa_1_2",
+              "z_kappa_1_3",
+              "z_kappa_2_3"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -5289,9 +5316,9 @@
           "tau_1",
           "tau_2",
           "tau_3",
-          "zeta_1_2",
-          "zeta_1_3",
-          "zeta_2_3"
+          "zeta_kappa_1_2",
+          "zeta_kappa_1_3",
+          "zeta_kappa_2_3"
         ],
         "removed": [],
         "rounds_including_terminal_check": 1,
@@ -5361,16 +5388,16 @@
           },
           {
             "action": "Request_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -5381,16 +5408,16 @@
           },
           {
             "action": "Request_1",
-            "target": "zeta_1_3",
+            "target": "zeta_kappa_1_3",
             "status": "valid",
             "context": [
-              "zeta_1_3"
+              "zeta_kappa_1_3"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_3",
-              "z_1_3"
+              "z_kappa_1_3"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -5465,8 +5492,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_1_3"
+              "z_kappa_1_2",
+              "z_kappa_1_3"
             ],
             "proof_variable_width": 6,
             "oracle_calls": 1,
@@ -5475,7 +5502,7 @@
           },
           {
             "action": "Enter_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -5484,8 +5511,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_1_3"
+              "z_kappa_1_2",
+              "z_kappa_1_3"
             ],
             "proof_variable_width": 6,
             "oracle_calls": 1,
@@ -5494,7 +5521,7 @@
           },
           {
             "action": "Enter_1",
-            "target": "zeta_1_3",
+            "target": "zeta_kappa_1_3",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -5503,8 +5530,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_1_3"
+              "z_kappa_1_2",
+              "z_kappa_1_3"
             ],
             "proof_variable_width": 6,
             "oracle_calls": 1,
@@ -5522,8 +5549,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_1_3"
+              "z_kappa_1_2",
+              "z_kappa_1_3"
             ],
             "proof_variable_width": 6,
             "oracle_calls": 1,
@@ -5532,7 +5559,7 @@
           },
           {
             "action": "Exit_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -5540,8 +5567,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_1_3"
+              "z_kappa_1_2",
+              "z_kappa_1_3"
             ],
             "proof_variable_width": 5,
             "oracle_calls": 1,
@@ -5550,7 +5577,7 @@
           },
           {
             "action": "Exit_1",
-            "target": "zeta_1_3",
+            "target": "zeta_kappa_1_3",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -5558,8 +5585,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_1_3"
+              "z_kappa_1_2",
+              "z_kappa_1_3"
             ],
             "proof_variable_width": 5,
             "oracle_calls": 1,
@@ -5638,16 +5665,16 @@
           },
           {
             "action": "Request_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -5658,16 +5685,16 @@
           },
           {
             "action": "Request_2",
-            "target": "zeta_2_3",
+            "target": "zeta_kappa_2_3",
             "status": "valid",
             "context": [
-              "zeta_2_3"
+              "zeta_kappa_2_3"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_2",
               "q_3",
-              "z_2_3"
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -5742,8 +5769,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_2_3"
+              "z_kappa_1_2",
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 6,
             "oracle_calls": 1,
@@ -5752,7 +5779,7 @@
           },
           {
             "action": "Enter_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -5761,8 +5788,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_2_3"
+              "z_kappa_1_2",
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 6,
             "oracle_calls": 1,
@@ -5771,7 +5798,7 @@
           },
           {
             "action": "Enter_2",
-            "target": "zeta_2_3",
+            "target": "zeta_kappa_2_3",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -5780,8 +5807,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_2_3"
+              "z_kappa_1_2",
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 6,
             "oracle_calls": 1,
@@ -5799,8 +5826,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_2_3"
+              "z_kappa_1_2",
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 6,
             "oracle_calls": 1,
@@ -5809,7 +5836,7 @@
           },
           {
             "action": "Exit_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -5817,8 +5844,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_2_3"
+              "z_kappa_1_2",
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 5,
             "oracle_calls": 1,
@@ -5827,7 +5854,7 @@
           },
           {
             "action": "Exit_2",
-            "target": "zeta_2_3",
+            "target": "zeta_kappa_2_3",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -5835,8 +5862,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_2_3"
+              "z_kappa_1_2",
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 5,
             "oracle_calls": 1,
@@ -5915,16 +5942,16 @@
           },
           {
             "action": "Request_3",
-            "target": "zeta_1_3",
+            "target": "zeta_kappa_1_3",
             "status": "valid",
             "context": [
-              "zeta_1_3"
+              "zeta_kappa_1_3"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_3",
-              "z_1_3"
+              "z_kappa_1_3"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -5935,16 +5962,16 @@
           },
           {
             "action": "Request_3",
-            "target": "zeta_2_3",
+            "target": "zeta_kappa_2_3",
             "status": "valid",
             "context": [
-              "zeta_2_3"
+              "zeta_kappa_2_3"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_2",
               "q_3",
-              "z_2_3"
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -6019,8 +6046,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_3",
-              "z_2_3"
+              "z_kappa_1_3",
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 6,
             "oracle_calls": 1,
@@ -6029,7 +6056,7 @@
           },
           {
             "action": "Enter_3",
-            "target": "zeta_1_3",
+            "target": "zeta_kappa_1_3",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -6038,8 +6065,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_3",
-              "z_2_3"
+              "z_kappa_1_3",
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 6,
             "oracle_calls": 1,
@@ -6048,7 +6075,7 @@
           },
           {
             "action": "Enter_3",
-            "target": "zeta_2_3",
+            "target": "zeta_kappa_2_3",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -6057,8 +6084,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_3",
-              "z_2_3"
+              "z_kappa_1_3",
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 6,
             "oracle_calls": 1,
@@ -6076,8 +6103,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_3",
-              "z_2_3"
+              "z_kappa_1_3",
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 6,
             "oracle_calls": 1,
@@ -6086,7 +6113,7 @@
           },
           {
             "action": "Exit_3",
-            "target": "zeta_1_3",
+            "target": "zeta_kappa_1_3",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -6094,8 +6121,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_3",
-              "z_2_3"
+              "z_kappa_1_3",
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 5,
             "oracle_calls": 1,
@@ -6104,7 +6131,7 @@
           },
           {
             "action": "Exit_3",
-            "target": "zeta_2_3",
+            "target": "zeta_kappa_2_3",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -6112,8 +6139,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_3",
-              "z_2_3"
+              "z_kappa_1_3",
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 5,
             "oracle_calls": 1,
@@ -6182,9 +6209,9 @@
           "tau_1",
           "tau_2",
           "tau_3",
-          "zeta_1_2",
-          "zeta_1_3",
-          "zeta_2_3"
+          "zeta_kappa_1_2",
+          "zeta_kappa_1_3",
+          "zeta_kappa_2_3"
         ],
         "all_retained_minimum_contexts_valid": true,
         "safety_entailment_passed": true,
@@ -6209,16 +6236,16 @@
           },
           {
             "action": "Request_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -6229,16 +6256,16 @@
           },
           {
             "action": "Request_1",
-            "target": "zeta_1_3",
+            "target": "zeta_kappa_1_3",
             "status": "valid",
             "context": [
-              "zeta_1_3"
+              "zeta_kappa_1_3"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_3",
-              "z_1_3"
+              "z_kappa_1_3"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -6313,8 +6340,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_1_3"
+              "z_kappa_1_2",
+              "z_kappa_1_3"
             ],
             "proof_variable_width": 6,
             "oracle_calls": 1,
@@ -6323,7 +6350,7 @@
           },
           {
             "action": "Enter_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -6332,8 +6359,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_1_3"
+              "z_kappa_1_2",
+              "z_kappa_1_3"
             ],
             "proof_variable_width": 6,
             "oracle_calls": 1,
@@ -6342,7 +6369,7 @@
           },
           {
             "action": "Enter_1",
-            "target": "zeta_1_3",
+            "target": "zeta_kappa_1_3",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -6351,8 +6378,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_1_3"
+              "z_kappa_1_2",
+              "z_kappa_1_3"
             ],
             "proof_variable_width": 6,
             "oracle_calls": 1,
@@ -6370,8 +6397,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_1_3"
+              "z_kappa_1_2",
+              "z_kappa_1_3"
             ],
             "proof_variable_width": 6,
             "oracle_calls": 1,
@@ -6380,7 +6407,7 @@
           },
           {
             "action": "Exit_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -6388,8 +6415,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_1_3"
+              "z_kappa_1_2",
+              "z_kappa_1_3"
             ],
             "proof_variable_width": 5,
             "oracle_calls": 1,
@@ -6398,7 +6425,7 @@
           },
           {
             "action": "Exit_1",
-            "target": "zeta_1_3",
+            "target": "zeta_kappa_1_3",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -6406,8 +6433,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_1_3"
+              "z_kappa_1_2",
+              "z_kappa_1_3"
             ],
             "proof_variable_width": 5,
             "oracle_calls": 1,
@@ -6486,16 +6513,16 @@
           },
           {
             "action": "Request_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -6506,16 +6533,16 @@
           },
           {
             "action": "Request_2",
-            "target": "zeta_2_3",
+            "target": "zeta_kappa_2_3",
             "status": "valid",
             "context": [
-              "zeta_2_3"
+              "zeta_kappa_2_3"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_2",
               "q_3",
-              "z_2_3"
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -6590,8 +6617,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_2_3"
+              "z_kappa_1_2",
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 6,
             "oracle_calls": 1,
@@ -6600,7 +6627,7 @@
           },
           {
             "action": "Enter_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -6609,8 +6636,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_2_3"
+              "z_kappa_1_2",
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 6,
             "oracle_calls": 1,
@@ -6619,7 +6646,7 @@
           },
           {
             "action": "Enter_2",
-            "target": "zeta_2_3",
+            "target": "zeta_kappa_2_3",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -6628,8 +6655,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_2_3"
+              "z_kappa_1_2",
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 6,
             "oracle_calls": 1,
@@ -6647,8 +6674,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_2_3"
+              "z_kappa_1_2",
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 6,
             "oracle_calls": 1,
@@ -6657,7 +6684,7 @@
           },
           {
             "action": "Exit_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -6665,8 +6692,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_2_3"
+              "z_kappa_1_2",
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 5,
             "oracle_calls": 1,
@@ -6675,7 +6702,7 @@
           },
           {
             "action": "Exit_2",
-            "target": "zeta_2_3",
+            "target": "zeta_kappa_2_3",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -6683,8 +6710,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_2",
-              "z_2_3"
+              "z_kappa_1_2",
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 5,
             "oracle_calls": 1,
@@ -6763,16 +6790,16 @@
           },
           {
             "action": "Request_3",
-            "target": "zeta_1_3",
+            "target": "zeta_kappa_1_3",
             "status": "valid",
             "context": [
-              "zeta_1_3"
+              "zeta_kappa_1_3"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_3",
-              "z_1_3"
+              "z_kappa_1_3"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -6783,16 +6810,16 @@
           },
           {
             "action": "Request_3",
-            "target": "zeta_2_3",
+            "target": "zeta_kappa_2_3",
             "status": "valid",
             "context": [
-              "zeta_2_3"
+              "zeta_kappa_2_3"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_2",
               "q_3",
-              "z_2_3"
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -6867,8 +6894,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_3",
-              "z_2_3"
+              "z_kappa_1_3",
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 6,
             "oracle_calls": 1,
@@ -6877,7 +6904,7 @@
           },
           {
             "action": "Enter_3",
-            "target": "zeta_1_3",
+            "target": "zeta_kappa_1_3",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -6886,8 +6913,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_3",
-              "z_2_3"
+              "z_kappa_1_3",
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 6,
             "oracle_calls": 1,
@@ -6896,7 +6923,7 @@
           },
           {
             "action": "Enter_3",
-            "target": "zeta_2_3",
+            "target": "zeta_kappa_2_3",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -6905,8 +6932,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_3",
-              "z_2_3"
+              "z_kappa_1_3",
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 6,
             "oracle_calls": 1,
@@ -6924,8 +6951,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_3",
-              "z_2_3"
+              "z_kappa_1_3",
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 6,
             "oracle_calls": 1,
@@ -6934,7 +6961,7 @@
           },
           {
             "action": "Exit_3",
-            "target": "zeta_1_3",
+            "target": "zeta_kappa_1_3",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -6942,8 +6969,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_3",
-              "z_2_3"
+              "z_kappa_1_3",
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 5,
             "oracle_calls": 1,
@@ -6952,7 +6979,7 @@
           },
           {
             "action": "Exit_3",
-            "target": "zeta_2_3",
+            "target": "zeta_kappa_2_3",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -6960,8 +6987,8 @@
               "q_1",
               "q_2",
               "q_3",
-              "z_1_3",
-              "z_2_3"
+              "z_kappa_1_3",
+              "z_kappa_2_3"
             ],
             "proof_variable_width": 5,
             "oracle_calls": 1,
@@ -7037,15 +7064,15 @@
         {
           "kind": "shared_writer_interference",
           "evidence": {
-            "z_1_2": [
+            "z_kappa_1_2": [
               "agent_1",
               "agent_2"
             ],
-            "z_1_3": [
+            "z_kappa_1_3": [
               "agent_1",
               "agent_3"
             ],
-            "z_2_3": [
+            "z_kappa_2_3": [
               "agent_2",
               "agent_3"
             ]
@@ -15666,17 +15693,24 @@
       "role_annotations": {
         "q": "0=away,1=wait,2=on",
         "owner": "-1=free;0..n-1=agent",
-        "edge_record": "on-indicator sum of endpoints",
+        "responsibility_arcs": [
+          "1->2",
+          "2->1"
+        ],
+        "kappa_classes": [
+          "kappa_1_2"
+        ],
+        "symmetric_arc_attribute": "reverse arcs share kappa class; sym=1",
         "provided_template_families": [
           "ownership",
-          "edge_consistency"
+          "kappa_consistency"
         ]
       },
       "initial": {
         "q_1": 0,
         "q_2": 0,
         "owner": -1,
-        "z_1_2": 0
+        "z_kappa_1_2": 0
       },
       "target": [
         "le",
@@ -15773,7 +15807,7 @@
             "unique_writer_component": "manager",
             "shared_writer": false
           },
-          "z_1_2": {
+          "z_kappa_1_2": {
             "domain": [
               0,
               1,
@@ -15869,13 +15903,13 @@
             ]
           },
           {
-            "name": "zeta_1_2",
-            "family": "edge_consistency",
+            "name": "zeta_kappa_1_2",
+            "family": "kappa_consistency",
             "expression": [
               "eq",
               [
                 "var",
-                "z_1_2"
+                "z_kappa_1_2"
               ],
               [
                 "add",
@@ -15928,7 +15962,7 @@
             "support": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "writer_components": [
               "agent_1",
@@ -15966,12 +16000,12 @@
             "frame_variables": [
               "q_2",
               "owner",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_1",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -16018,7 +16052,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -16045,7 +16079,7 @@
                 "const",
                 2
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "add",
                 [
                   "const",
@@ -16081,7 +16115,7 @@
             ],
             "inferred_write": [
               "q_1",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_2",
@@ -16090,7 +16124,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_1",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -16112,7 +16146,7 @@
                 "const",
                 0
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "ite",
                 [
                   "eq",
@@ -16141,7 +16175,7 @@
             ],
             "inferred_write": [
               "q_1",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_2",
@@ -16150,7 +16184,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_1",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -16197,7 +16231,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -16234,12 +16268,12 @@
             "frame_variables": [
               "q_1",
               "owner",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -16286,7 +16320,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -16327,7 +16361,7 @@
                 "const",
                 2
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "add",
                 [
                   "const",
@@ -16364,7 +16398,7 @@
             ],
             "inferred_write": [
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_1",
@@ -16373,7 +16407,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -16395,7 +16429,7 @@
                 "const",
                 0
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "ite",
                 [
                   "eq",
@@ -16424,7 +16458,7 @@
             ],
             "inferred_write": [
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_1",
@@ -16433,7 +16467,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -16480,7 +16514,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -16575,7 +16609,7 @@
       "template_pruning": {
         "retained": [
           "tau_2",
-          "zeta_1_2"
+          "zeta_kappa_1_2"
         ],
         "removed": [
           {
@@ -16586,28 +16620,28 @@
             "component": "agent_1",
             "inferred_written_variables": [
               "q_1",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "actual_changed_variables": [
               "q_1",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "source": {
               "q_1": 1,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 0
+              "z_kappa_1_2": 0
             },
             "successor": {
               "q_1": 2,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             "allowed_premise_names": [
               "tau_1",
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "unmet_allowed_premises": [],
             "false_other_library_templates": [],
@@ -16619,7 +16653,7 @@
             "current_clause_names": [
               "tau_1",
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           }
         ],
@@ -16632,7 +16666,7 @@
         "q_1": 2,
         "q_2": 2,
         "owner": 1,
-        "z_1_2": 2
+        "z_kappa_1_2": 2
       },
       "reachable_safety": {
         "status": "unsafe",
@@ -16652,37 +16686,37 @@
               "q_1": 0,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 0
+              "z_kappa_1_2": 0
             },
             {
               "q_1": 1,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 0
+              "z_kappa_1_2": 0
             },
             {
               "q_1": 2,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             {
               "q_1": 2,
               "q_2": 1,
               "owner": -1,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             {
               "q_1": 2,
               "q_2": 1,
               "owner": 1,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             {
               "q_1": 2,
               "q_2": 2,
               "owner": 1,
-              "z_1_2": 2
+              "z_kappa_1_2": 2
             }
           ],
           "verified_against_actual_actions": true
@@ -16703,19 +16737,19 @@
               "q_1": 0,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 0
+              "z_kappa_1_2": 0
             },
             {
               "q_1": 1,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 0
+              "z_kappa_1_2": 0
             },
             {
               "q_1": 2,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             }
           ],
           "verified_against_actual_actions": true
@@ -16749,27 +16783,27 @@
               "component": "agent_1",
               "inferred_written_variables": [
                 "q_1",
-                "z_1_2"
+                "z_kappa_1_2"
               ],
               "actual_changed_variables": [
                 "q_1",
-                "z_1_2"
+                "z_kappa_1_2"
               ],
               "source": {
                 "q_1": 1,
                 "q_2": 0,
                 "owner": -1,
-                "z_1_2": 0
+                "z_kappa_1_2": 0
               },
               "successor": {
                 "q_1": 2,
                 "q_2": 0,
                 "owner": -1,
-                "z_1_2": 1
+                "z_kappa_1_2": 1
               },
               "allowed_premise_names": [
                 "tau_1",
-                "zeta_1_2"
+                "zeta_kappa_1_2"
               ],
               "unmet_allowed_premises": [],
               "false_other_library_templates": [],
@@ -16793,28 +16827,28 @@
               "component": "agent_1",
               "inferred_written_variables": [
                 "q_1",
-                "z_1_2"
+                "z_kappa_1_2"
               ],
               "actual_changed_variables": [
                 "q_1",
-                "z_1_2"
+                "z_kappa_1_2"
               ],
               "source": {
                 "q_1": 1,
                 "q_2": 0,
                 "owner": -1,
-                "z_1_2": 0
+                "z_kappa_1_2": 0
               },
               "successor": {
                 "q_1": 2,
                 "q_2": 0,
                 "owner": -1,
-                "z_1_2": 1
+                "z_kappa_1_2": 1
               },
               "allowed_premise_names": [
                 "tau_1",
                 "tau_2",
-                "zeta_1_2"
+                "zeta_kappa_1_2"
               ],
               "unmet_allowed_premises": [],
               "false_other_library_templates": [],
@@ -16843,16 +16877,16 @@
           },
           {
             "action": "Request_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -16912,14 +16946,14 @@
           },
           {
             "action": "Enter_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -16936,7 +16970,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -16945,14 +16979,14 @@
           },
           {
             "action": "Exit_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -17011,16 +17045,16 @@
           },
           {
             "action": "Request_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -17074,7 +17108,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -17083,7 +17117,7 @@
           },
           {
             "action": "Enter_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -17091,7 +17125,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -17108,7 +17142,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -17117,14 +17151,14 @@
           },
           {
             "action": "Exit_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -17171,7 +17205,7 @@
       "generated_certificate": {
         "retained_clause_names": [
           "tau_2",
-          "zeta_1_2"
+          "zeta_kappa_1_2"
         ],
         "all_retained_minimum_contexts_valid": true,
         "safety_entailment_passed": false,
@@ -17181,16 +17215,16 @@
         "one_step_context_records": [
           {
             "action": "Request_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -17221,14 +17255,14 @@
           },
           {
             "action": "Enter_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -17237,14 +17271,14 @@
           },
           {
             "action": "Exit_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -17288,16 +17322,16 @@
           },
           {
             "action": "Request_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -17331,7 +17365,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -17340,7 +17374,7 @@
           },
           {
             "action": "Enter_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -17348,7 +17382,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -17365,7 +17399,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -17374,14 +17408,14 @@
           },
           {
             "action": "Exit_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -17417,7 +17451,7 @@
         {
           "kind": "shared_writer_interference",
           "evidence": {
-            "z_1_2": [
+            "z_kappa_1_2": [
               "agent_1",
               "agent_2"
             ]
@@ -17435,28 +17469,28 @@
             "component": "agent_1",
             "inferred_written_variables": [
               "q_1",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "actual_changed_variables": [
               "q_1",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "source": {
               "q_1": 1,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 0
+              "z_kappa_1_2": 0
             },
             "successor": {
               "q_1": 2,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             "allowed_premise_names": [
               "tau_1",
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "unmet_allowed_premises": [],
             "false_other_library_templates": [],
@@ -17468,7 +17502,7 @@
             "current_clause_names": [
               "tau_1",
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           "status": "one_step_obligation_failure_with_separate_exact_reachability_check"
@@ -17479,7 +17513,7 @@
             "q_1": 2,
             "q_2": 2,
             "owner": 1,
-            "z_1_2": 2
+            "z_kappa_1_2": 2
           },
           "status": "full_domain_static_witness",
           "suggested_remedy": "extend supplied templates or use a different abstraction; hypothesis only"
@@ -17505,37 +17539,37 @@
                 "q_1": 0,
                 "q_2": 0,
                 "owner": -1,
-                "z_1_2": 0
+                "z_kappa_1_2": 0
               },
               {
                 "q_1": 1,
                 "q_2": 0,
                 "owner": -1,
-                "z_1_2": 0
+                "z_kappa_1_2": 0
               },
               {
                 "q_1": 2,
                 "q_2": 0,
                 "owner": -1,
-                "z_1_2": 1
+                "z_kappa_1_2": 1
               },
               {
                 "q_1": 2,
                 "q_2": 1,
                 "owner": -1,
-                "z_1_2": 1
+                "z_kappa_1_2": 1
               },
               {
                 "q_1": 2,
                 "q_2": 1,
                 "owner": 1,
-                "z_1_2": 1
+                "z_kappa_1_2": 1
               },
               {
                 "q_1": 2,
                 "q_2": 2,
                 "owner": 1,
-                "z_1_2": 2
+                "z_kappa_1_2": 2
               }
             ],
             "verified_against_actual_actions": true
@@ -17549,17 +17583,24 @@
       "role_annotations": {
         "q": "0=away,1=wait,2=on",
         "owner": "-1=free;0..n-1=agent",
-        "edge_record": "on-indicator sum of endpoints",
+        "responsibility_arcs": [
+          "1->2",
+          "2->1"
+        ],
+        "kappa_classes": [
+          "kappa_1_2"
+        ],
+        "symmetric_arc_attribute": "reverse arcs share kappa class; sym=1",
         "provided_template_families": [
           "ownership",
-          "edge_consistency"
+          "kappa_consistency"
         ]
       },
       "initial": {
         "q_1": 0,
         "q_2": 0,
         "owner": -1,
-        "z_1_2": 0
+        "z_kappa_1_2": 0
       },
       "target": [
         "le",
@@ -17656,7 +17697,7 @@
             "unique_writer_component": "manager",
             "shared_writer": false
           },
-          "z_1_2": {
+          "z_kappa_1_2": {
             "domain": [
               0,
               1,
@@ -17752,13 +17793,13 @@
             ]
           },
           {
-            "name": "zeta_1_2",
-            "family": "edge_consistency",
+            "name": "zeta_kappa_1_2",
+            "family": "kappa_consistency",
             "expression": [
               "eq",
               [
                 "var",
-                "z_1_2"
+                "z_kappa_1_2"
               ],
               [
                 "add",
@@ -17811,7 +17852,7 @@
             "support": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "writer_components": [
               "agent_1",
@@ -17849,12 +17890,12 @@
             "frame_variables": [
               "q_2",
               "owner",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_1",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -17901,7 +17942,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -17942,7 +17983,7 @@
                 "const",
                 2
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "add",
                 [
                   "const",
@@ -17979,7 +18020,7 @@
             ],
             "inferred_write": [
               "q_1",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_2",
@@ -17988,7 +18029,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_1",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -18010,7 +18051,7 @@
                 "const",
                 0
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "ite",
                 [
                   "eq",
@@ -18039,7 +18080,7 @@
             ],
             "inferred_write": [
               "q_1",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_2",
@@ -18048,7 +18089,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_1",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -18080,7 +18121,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -18117,12 +18158,12 @@
             "frame_variables": [
               "q_1",
               "owner",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -18169,7 +18210,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -18210,7 +18251,7 @@
                 "const",
                 2
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "add",
                 [
                   "const",
@@ -18247,7 +18288,7 @@
             ],
             "inferred_write": [
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_1",
@@ -18256,7 +18297,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -18278,7 +18319,7 @@
                 "const",
                 0
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "ite",
                 [
                   "eq",
@@ -18307,7 +18348,7 @@
             ],
             "inferred_write": [
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_1",
@@ -18316,7 +18357,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -18363,7 +18404,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -18458,7 +18499,7 @@
       "template_pruning": {
         "retained": [
           "tau_2",
-          "zeta_1_2"
+          "zeta_kappa_1_2"
         ],
         "removed": [
           {
@@ -18477,18 +18518,18 @@
               "q_1": 2,
               "q_2": 0,
               "owner": 0,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             "successor": {
               "q_1": 2,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             "allowed_premise_names": [
               "tau_1",
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "unmet_allowed_premises": [],
             "false_other_library_templates": [],
@@ -18500,7 +18541,7 @@
             "current_clause_names": [
               "tau_1",
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           }
         ],
@@ -18513,7 +18554,7 @@
         "q_1": 2,
         "q_2": 2,
         "owner": 1,
-        "z_1_2": 2
+        "z_kappa_1_2": 2
       },
       "reachable_safety": {
         "status": "unsafe",
@@ -18535,49 +18576,49 @@
               "q_1": 0,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 0
+              "z_kappa_1_2": 0
             },
             {
               "q_1": 1,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 0
+              "z_kappa_1_2": 0
             },
             {
               "q_1": 1,
               "q_2": 0,
               "owner": 0,
-              "z_1_2": 0
+              "z_kappa_1_2": 0
             },
             {
               "q_1": 2,
               "q_2": 0,
               "owner": 0,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             {
               "q_1": 2,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             {
               "q_1": 2,
               "q_2": 1,
               "owner": -1,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             {
               "q_1": 2,
               "q_2": 1,
               "owner": 1,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             {
               "q_1": 2,
               "q_2": 2,
               "owner": 1,
-              "z_1_2": 2
+              "z_kappa_1_2": 2
             }
           ],
           "verified_against_actual_actions": true
@@ -18600,31 +18641,31 @@
               "q_1": 0,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 0
+              "z_kappa_1_2": 0
             },
             {
               "q_1": 1,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 0
+              "z_kappa_1_2": 0
             },
             {
               "q_1": 1,
               "q_2": 0,
               "owner": 0,
-              "z_1_2": 0
+              "z_kappa_1_2": 0
             },
             {
               "q_1": 2,
               "q_2": 0,
               "owner": 0,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             {
               "q_1": 2,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             }
           ],
           "verified_against_actual_actions": true
@@ -18666,13 +18707,13 @@
                 "q_1": 2,
                 "q_2": 0,
                 "owner": 0,
-                "z_1_2": 1
+                "z_kappa_1_2": 1
               },
               "successor": {
                 "q_1": 2,
                 "q_2": 0,
                 "owner": -1,
-                "z_1_2": 1
+                "z_kappa_1_2": 1
               },
               "allowed_premise_names": [
                 "tau_1",
@@ -18708,18 +18749,18 @@
                 "q_1": 2,
                 "q_2": 0,
                 "owner": 0,
-                "z_1_2": 1
+                "z_kappa_1_2": 1
               },
               "successor": {
                 "q_1": 2,
                 "q_2": 0,
                 "owner": -1,
-                "z_1_2": 1
+                "z_kappa_1_2": 1
               },
               "allowed_premise_names": [
                 "tau_1",
                 "tau_2",
-                "zeta_1_2"
+                "zeta_kappa_1_2"
               ],
               "unmet_allowed_premises": [],
               "false_other_library_templates": [],
@@ -18748,16 +18789,16 @@
           },
           {
             "action": "Request_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -18811,7 +18852,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -18820,7 +18861,7 @@
           },
           {
             "action": "Enter_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -18828,7 +18869,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -18845,7 +18886,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -18854,14 +18895,14 @@
           },
           {
             "action": "Exit_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -18918,16 +18959,16 @@
           },
           {
             "action": "Request_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -18981,7 +19022,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -18990,7 +19031,7 @@
           },
           {
             "action": "Enter_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -18998,7 +19039,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -19015,7 +19056,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -19024,14 +19065,14 @@
           },
           {
             "action": "Exit_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -19078,7 +19119,7 @@
       "generated_certificate": {
         "retained_clause_names": [
           "tau_2",
-          "zeta_1_2"
+          "zeta_kappa_1_2"
         ],
         "all_retained_minimum_contexts_valid": true,
         "safety_entailment_passed": false,
@@ -19088,16 +19129,16 @@
         "one_step_context_records": [
           {
             "action": "Request_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -19128,7 +19169,7 @@
           },
           {
             "action": "Enter_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -19136,7 +19177,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -19145,14 +19186,14 @@
           },
           {
             "action": "Exit_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -19195,16 +19236,16 @@
           },
           {
             "action": "Request_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -19238,7 +19279,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -19247,7 +19288,7 @@
           },
           {
             "action": "Enter_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -19255,7 +19296,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -19272,7 +19313,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -19281,14 +19322,14 @@
           },
           {
             "action": "Exit_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -19324,7 +19365,7 @@
         {
           "kind": "shared_writer_interference",
           "evidence": {
-            "z_1_2": [
+            "z_kappa_1_2": [
               "agent_1",
               "agent_2"
             ]
@@ -19350,18 +19391,18 @@
               "q_1": 2,
               "q_2": 0,
               "owner": 0,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             "successor": {
               "q_1": 2,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             "allowed_premise_names": [
               "tau_1",
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "unmet_allowed_premises": [],
             "false_other_library_templates": [],
@@ -19373,7 +19414,7 @@
             "current_clause_names": [
               "tau_1",
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           "status": "one_step_obligation_failure_with_separate_exact_reachability_check"
@@ -19384,7 +19425,7 @@
             "q_1": 2,
             "q_2": 2,
             "owner": 1,
-            "z_1_2": 2
+            "z_kappa_1_2": 2
           },
           "status": "full_domain_static_witness",
           "suggested_remedy": "extend supplied templates or use a different abstraction; hypothesis only"
@@ -19412,49 +19453,49 @@
                 "q_1": 0,
                 "q_2": 0,
                 "owner": -1,
-                "z_1_2": 0
+                "z_kappa_1_2": 0
               },
               {
                 "q_1": 1,
                 "q_2": 0,
                 "owner": -1,
-                "z_1_2": 0
+                "z_kappa_1_2": 0
               },
               {
                 "q_1": 1,
                 "q_2": 0,
                 "owner": 0,
-                "z_1_2": 0
+                "z_kappa_1_2": 0
               },
               {
                 "q_1": 2,
                 "q_2": 0,
                 "owner": 0,
-                "z_1_2": 1
+                "z_kappa_1_2": 1
               },
               {
                 "q_1": 2,
                 "q_2": 0,
                 "owner": -1,
-                "z_1_2": 1
+                "z_kappa_1_2": 1
               },
               {
                 "q_1": 2,
                 "q_2": 1,
                 "owner": -1,
-                "z_1_2": 1
+                "z_kappa_1_2": 1
               },
               {
                 "q_1": 2,
                 "q_2": 1,
                 "owner": 1,
-                "z_1_2": 1
+                "z_kappa_1_2": 1
               },
               {
                 "q_1": 2,
                 "q_2": 2,
                 "owner": 1,
-                "z_1_2": 2
+                "z_kappa_1_2": 2
               }
             ],
             "verified_against_actual_actions": true
@@ -19468,17 +19509,24 @@
       "role_annotations": {
         "q": "0=away,1=wait,2=on",
         "owner": "-1=free;0..n-1=agent",
-        "edge_record": "on-indicator sum of endpoints",
+        "responsibility_arcs": [
+          "1->2",
+          "2->1"
+        ],
+        "kappa_classes": [
+          "kappa_1_2"
+        ],
+        "symmetric_arc_attribute": "reverse arcs share kappa class; sym=1",
         "provided_template_families": [
           "ownership",
-          "edge_consistency"
+          "kappa_consistency"
         ]
       },
       "initial": {
         "q_1": 0,
         "q_2": 0,
         "owner": -1,
-        "z_1_2": 0
+        "z_kappa_1_2": 0
       },
       "target": [
         "le",
@@ -19575,7 +19623,7 @@
             "unique_writer_component": "manager",
             "shared_writer": false
           },
-          "z_1_2": {
+          "z_kappa_1_2": {
             "domain": [
               0,
               1,
@@ -19671,13 +19719,13 @@
             ]
           },
           {
-            "name": "zeta_1_2",
-            "family": "edge_consistency",
+            "name": "zeta_kappa_1_2",
+            "family": "kappa_consistency",
             "expression": [
               "eq",
               [
                 "var",
-                "z_1_2"
+                "z_kappa_1_2"
               ],
               [
                 "add",
@@ -19730,7 +19778,7 @@
             "support": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "writer_components": [
               "agent_1",
@@ -19768,12 +19816,12 @@
             "frame_variables": [
               "q_2",
               "owner",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_1",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -19820,7 +19868,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -19872,12 +19920,12 @@
             "frame_variables": [
               "q_2",
               "owner",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_1",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -19899,7 +19947,7 @@
                 "const",
                 0
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "ite",
                 [
                   "eq",
@@ -19928,7 +19976,7 @@
             ],
             "inferred_write": [
               "q_1",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_2",
@@ -19937,7 +19985,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_1",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -19984,7 +20032,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -20007,7 +20055,7 @@
               ]
             ],
             "parallel_assignments": {
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "add",
                 [
                   "ite",
@@ -20060,7 +20108,7 @@
               "q_2"
             ],
             "inferred_write": [
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_1",
@@ -20069,7 +20117,7 @@
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -20101,12 +20149,12 @@
             "frame_variables": [
               "q_1",
               "owner",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -20153,7 +20201,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -20194,7 +20242,7 @@
                 "const",
                 2
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "add",
                 [
                   "const",
@@ -20231,7 +20279,7 @@
             ],
             "inferred_write": [
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_1",
@@ -20240,7 +20288,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -20262,7 +20310,7 @@
                 "const",
                 0
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "ite",
                 [
                   "eq",
@@ -20291,7 +20339,7 @@
             ],
             "inferred_write": [
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_1",
@@ -20300,7 +20348,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -20347,7 +20395,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -20449,7 +20497,7 @@
         ],
         "removed": [
           {
-            "clause": "zeta_1_2",
+            "clause": "zeta_kappa_1_2",
             "round": 1,
             "kind": "inductiveness",
             "action": "Enter_1",
@@ -20464,18 +20512,18 @@
               "q_1": 1,
               "q_2": 0,
               "owner": 0,
-              "z_1_2": 0
+              "z_kappa_1_2": 0
             },
             "successor": {
               "q_1": 2,
               "q_2": 0,
               "owner": 0,
-              "z_1_2": 0
+              "z_kappa_1_2": 0
             },
             "allowed_premise_names": [
               "tau_1",
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "unmet_allowed_premises": [],
             "false_other_library_templates": [],
@@ -20487,7 +20535,7 @@
             "current_clause_names": [
               "tau_1",
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           }
         ],
@@ -20519,25 +20567,25 @@
               "q_1": 0,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 0
+              "z_kappa_1_2": 0
             },
             {
               "q_1": 1,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 0
+              "z_kappa_1_2": 0
             },
             {
               "q_1": 1,
               "q_2": 0,
               "owner": 0,
-              "z_1_2": 0
+              "z_kappa_1_2": 0
             },
             {
               "q_1": 2,
               "q_2": 0,
               "owner": 0,
-              "z_1_2": 0
+              "z_kappa_1_2": 0
             }
           ],
           "verified_against_actual_actions": true
@@ -20567,7 +20615,7 @@
           "failures": [
             {
               "action": "Enter_1",
-              "target": "zeta_1_2",
+              "target": "zeta_kappa_1_2",
               "component": "agent_1",
               "inferred_written_variables": [
                 "q_1"
@@ -20579,17 +20627,17 @@
                 "q_1": 1,
                 "q_2": 0,
                 "owner": 0,
-                "z_1_2": 0
+                "z_kappa_1_2": 0
               },
               "successor": {
                 "q_1": 2,
                 "q_2": 0,
                 "owner": 0,
-                "z_1_2": 0
+                "z_kappa_1_2": 0
               },
               "allowed_premise_names": [
                 "tau_1",
-                "zeta_1_2"
+                "zeta_kappa_1_2"
               ],
               "unmet_allowed_premises": [],
               "false_other_library_templates": [],
@@ -20609,7 +20657,7 @@
           "infeasible_full_candidate": [
             {
               "action": "Enter_1",
-              "target": "zeta_1_2",
+              "target": "zeta_kappa_1_2",
               "component": "agent_1",
               "inferred_written_variables": [
                 "q_1"
@@ -20621,18 +20669,18 @@
                 "q_1": 1,
                 "q_2": 0,
                 "owner": 0,
-                "z_1_2": 0
+                "z_kappa_1_2": 0
               },
               "successor": {
                 "q_1": 2,
                 "q_2": 0,
                 "owner": 0,
-                "z_1_2": 0
+                "z_kappa_1_2": 0
               },
               "allowed_premise_names": [
                 "tau_1",
                 "tau_2",
-                "zeta_1_2"
+                "zeta_kappa_1_2"
               ],
               "unmet_allowed_premises": [],
               "false_other_library_templates": [],
@@ -20661,16 +20709,16 @@
           },
           {
             "action": "Request_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -20731,7 +20779,7 @@
           },
           {
             "action": "Enter_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "candidate_not_inductive",
             "context": null,
             "cardinality": null,
@@ -20753,7 +20801,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -20762,14 +20810,14 @@
           },
           {
             "action": "Exit_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -20813,14 +20861,14 @@
           },
           {
             "action": "Refresh_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -20844,16 +20892,16 @@
           },
           {
             "action": "Request_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -20907,7 +20955,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -20916,7 +20964,7 @@
           },
           {
             "action": "Enter_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -20924,7 +20972,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -20941,7 +20989,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -20950,14 +20998,14 @@
           },
           {
             "action": "Exit_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -21087,7 +21135,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -21189,7 +21237,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -21206,7 +21254,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -21262,7 +21310,7 @@
         {
           "kind": "shared_writer_interference",
           "evidence": {
-            "z_1_2": [
+            "z_kappa_1_2": [
               "agent_1",
               "agent_2"
             ]
@@ -21273,7 +21321,7 @@
         {
           "kind": "candidate_not_inductive",
           "evidence": {
-            "clause": "zeta_1_2",
+            "clause": "zeta_kappa_1_2",
             "round": 1,
             "kind": "inductiveness",
             "action": "Enter_1",
@@ -21288,18 +21336,18 @@
               "q_1": 1,
               "q_2": 0,
               "owner": 0,
-              "z_1_2": 0
+              "z_kappa_1_2": 0
             },
             "successor": {
               "q_1": 2,
               "q_2": 0,
               "owner": 0,
-              "z_1_2": 0
+              "z_kappa_1_2": 0
             },
             "allowed_premise_names": [
               "tau_1",
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "unmet_allowed_premises": [],
             "false_other_library_templates": [],
@@ -21311,13 +21359,13 @@
             "current_clause_names": [
               "tau_1",
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           "status": "one_step_obligation_failure_with_separate_exact_reachability_check"
         },
         {
-          "kind": "node_update_and_edge_refresh_are_separate_transitions",
+          "kind": "node_update_and_kappa_refresh_are_separate_transitions",
           "status": "source_syntax_fact_of_deliberate_mutation",
           "suggested_remedy": "repair this protocol condition and rerun all checks; hypothesis only"
         }
@@ -21328,17 +21376,24 @@
       "role_annotations": {
         "q": "0=away,1=wait,2=on",
         "owner": "-1=free;0..n-1=agent",
-        "edge_record": "on-indicator sum of endpoints",
+        "responsibility_arcs": [
+          "1->2",
+          "2->1"
+        ],
+        "kappa_classes": [
+          "kappa_1_2"
+        ],
+        "symmetric_arc_attribute": "reverse arcs share kappa class; sym=1",
         "provided_template_families": [
           "ownership",
-          "edge_consistency"
+          "kappa_consistency"
         ]
       },
       "initial": {
         "q_1": 0,
         "q_2": 0,
         "owner": -1,
-        "z_1_2": 0
+        "z_kappa_1_2": 0
       },
       "target": [
         "le",
@@ -21436,7 +21491,7 @@
             "unique_writer_component": null,
             "shared_writer": true
           },
-          "z_1_2": {
+          "z_kappa_1_2": {
             "domain": [
               0,
               1,
@@ -21534,13 +21589,13 @@
             ]
           },
           {
-            "name": "zeta_1_2",
-            "family": "edge_consistency",
+            "name": "zeta_kappa_1_2",
+            "family": "kappa_consistency",
             "expression": [
               "eq",
               [
                 "var",
-                "z_1_2"
+                "z_kappa_1_2"
               ],
               [
                 "add",
@@ -21593,7 +21648,7 @@
             "support": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "writer_components": [
               "agent_1",
@@ -21631,12 +21686,12 @@
             "frame_variables": [
               "q_2",
               "owner",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_1",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -21683,7 +21738,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -21724,7 +21779,7 @@
                 "const",
                 2
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "add",
                 [
                   "const",
@@ -21761,7 +21816,7 @@
             ],
             "inferred_write": [
               "q_1",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_2",
@@ -21770,7 +21825,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_1",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -21792,7 +21847,7 @@
                 "const",
                 0
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "ite",
                 [
                   "eq",
@@ -21821,7 +21876,7 @@
             ],
             "inferred_write": [
               "q_1",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_2",
@@ -21830,7 +21885,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_1",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -21877,7 +21932,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -21914,12 +21969,12 @@
             "frame_variables": [
               "q_1",
               "owner",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -21966,7 +22021,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -22007,7 +22062,7 @@
                 "const",
                 2
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "add",
                 [
                   "const",
@@ -22044,7 +22099,7 @@
             ],
             "inferred_write": [
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_1",
@@ -22053,7 +22108,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -22075,7 +22130,7 @@
                 "const",
                 0
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "ite",
                 [
                   "eq",
@@ -22104,7 +22159,7 @@
             ],
             "inferred_write": [
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_1",
@@ -22113,7 +22168,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -22160,7 +22215,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -22188,7 +22243,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -22314,7 +22369,7 @@
       },
       "template_pruning": {
         "retained": [
-          "zeta_1_2"
+          "zeta_kappa_1_2"
         ],
         "removed": [
           {
@@ -22333,18 +22388,18 @@
               "q_1": 0,
               "q_2": 2,
               "owner": 1,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             "successor": {
               "q_1": 0,
               "q_2": 2,
               "owner": -1,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             "allowed_premise_names": [
               "tau_1",
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "unmet_allowed_premises": [],
             "false_other_library_templates": [],
@@ -22356,7 +22411,7 @@
             "current_clause_names": [
               "tau_1",
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -22375,18 +22430,18 @@
               "q_1": 2,
               "q_2": 0,
               "owner": 0,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             "successor": {
               "q_1": 2,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             "allowed_premise_names": [
               "tau_1",
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "unmet_allowed_premises": [],
             "false_other_library_templates": [],
@@ -22398,7 +22453,7 @@
             "current_clause_names": [
               "tau_1",
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           }
         ],
@@ -22411,7 +22466,7 @@
         "q_1": 2,
         "q_2": 2,
         "owner": -1,
-        "z_1_2": 2
+        "z_kappa_1_2": 2
       },
       "reachable_safety": {
         "status": "unsafe",
@@ -22433,49 +22488,49 @@
               "q_1": 0,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 0
+              "z_kappa_1_2": 0
             },
             {
               "q_1": 1,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 0
+              "z_kappa_1_2": 0
             },
             {
               "q_1": 1,
               "q_2": 0,
               "owner": 0,
-              "z_1_2": 0
+              "z_kappa_1_2": 0
             },
             {
               "q_1": 2,
               "q_2": 0,
               "owner": 0,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             {
               "q_1": 2,
               "q_2": 1,
               "owner": 0,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             {
               "q_1": 2,
               "q_2": 1,
               "owner": -1,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             {
               "q_1": 2,
               "q_2": 1,
               "owner": 1,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             {
               "q_1": 2,
               "q_2": 2,
               "owner": 1,
-              "z_1_2": 2
+              "z_kappa_1_2": 2
             }
           ],
           "verified_against_actual_actions": true
@@ -22498,31 +22553,31 @@
               "q_1": 0,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 0
+              "z_kappa_1_2": 0
             },
             {
               "q_1": 1,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 0
+              "z_kappa_1_2": 0
             },
             {
               "q_1": 1,
               "q_2": 0,
               "owner": 0,
-              "z_1_2": 0
+              "z_kappa_1_2": 0
             },
             {
               "q_1": 2,
               "q_2": 0,
               "owner": 0,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             {
               "q_1": 2,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             }
           ],
           "verified_against_actual_actions": true
@@ -22564,13 +22619,13 @@
                 "q_1": 2,
                 "q_2": 0,
                 "owner": 0,
-                "z_1_2": 1
+                "z_kappa_1_2": 1
               },
               "successor": {
                 "q_1": 2,
                 "q_2": 0,
                 "owner": -1,
-                "z_1_2": 1
+                "z_kappa_1_2": 1
               },
               "allowed_premise_names": [
                 "tau_1",
@@ -22597,13 +22652,13 @@
                 "q_1": 0,
                 "q_2": 2,
                 "owner": 1,
-                "z_1_2": 1
+                "z_kappa_1_2": 1
               },
               "successor": {
                 "q_1": 0,
                 "q_2": 2,
                 "owner": -1,
-                "z_1_2": 1
+                "z_kappa_1_2": 1
               },
               "allowed_premise_names": [
                 "tau_1",
@@ -22639,18 +22694,18 @@
                 "q_1": 2,
                 "q_2": 0,
                 "owner": 0,
-                "z_1_2": 1
+                "z_kappa_1_2": 1
               },
               "successor": {
                 "q_1": 2,
                 "q_2": 0,
                 "owner": -1,
-                "z_1_2": 1
+                "z_kappa_1_2": 1
               },
               "allowed_premise_names": [
                 "tau_1",
                 "tau_2",
-                "zeta_1_2"
+                "zeta_kappa_1_2"
               ],
               "unmet_allowed_premises": [],
               "false_other_library_templates": [],
@@ -22673,18 +22728,18 @@
                 "q_1": 0,
                 "q_2": 2,
                 "owner": 1,
-                "z_1_2": 1
+                "z_kappa_1_2": 1
               },
               "successor": {
                 "q_1": 0,
                 "q_2": 2,
                 "owner": -1,
-                "z_1_2": 1
+                "z_kappa_1_2": 1
               },
               "allowed_premise_names": [
                 "tau_1",
                 "tau_2",
-                "zeta_1_2"
+                "zeta_kappa_1_2"
               ],
               "unmet_allowed_premises": [],
               "false_other_library_templates": [],
@@ -22713,16 +22768,16 @@
           },
           {
             "action": "Request_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -22776,7 +22831,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -22785,7 +22840,7 @@
           },
           {
             "action": "Enter_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -22793,7 +22848,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -22810,7 +22865,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -22819,14 +22874,14 @@
           },
           {
             "action": "Exit_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -22885,16 +22940,16 @@
           },
           {
             "action": "Request_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -22948,7 +23003,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -22957,7 +23012,7 @@
           },
           {
             "action": "Enter_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -22965,7 +23020,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -22982,7 +23037,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -22991,14 +23046,14 @@
           },
           {
             "action": "Exit_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -23072,7 +23127,7 @@
       },
       "generated_certificate": {
         "retained_clause_names": [
-          "zeta_1_2"
+          "zeta_kappa_1_2"
         ],
         "all_retained_minimum_contexts_valid": true,
         "safety_entailment_passed": false,
@@ -23082,16 +23137,16 @@
         "one_step_context_records": [
           {
             "action": "Request_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -23102,7 +23157,7 @@
           },
           {
             "action": "Enter_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -23110,7 +23165,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -23119,14 +23174,14 @@
           },
           {
             "action": "Exit_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -23135,16 +23190,16 @@
           },
           {
             "action": "Request_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -23155,7 +23210,7 @@
           },
           {
             "action": "Enter_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -23163,7 +23218,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -23172,14 +23227,14 @@
           },
           {
             "action": "Exit_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -23204,7 +23259,7 @@
               "environment",
               "manager"
             ],
-            "z_1_2": [
+            "z_kappa_1_2": [
               "agent_1",
               "agent_2"
             ]
@@ -23230,18 +23285,18 @@
               "q_1": 0,
               "q_2": 2,
               "owner": 1,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             "successor": {
               "q_1": 0,
               "q_2": 2,
               "owner": -1,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             "allowed_premise_names": [
               "tau_1",
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "unmet_allowed_premises": [],
             "false_other_library_templates": [],
@@ -23253,7 +23308,7 @@
             "current_clause_names": [
               "tau_1",
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           "status": "one_step_obligation_failure_with_separate_exact_reachability_check"
@@ -23276,18 +23331,18 @@
               "q_1": 2,
               "q_2": 0,
               "owner": 0,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             "successor": {
               "q_1": 2,
               "q_2": 0,
               "owner": -1,
-              "z_1_2": 1
+              "z_kappa_1_2": 1
             },
             "allowed_premise_names": [
               "tau_1",
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "unmet_allowed_premises": [],
             "false_other_library_templates": [],
@@ -23299,7 +23354,7 @@
             "current_clause_names": [
               "tau_1",
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           "status": "one_step_obligation_failure_with_separate_exact_reachability_check"
@@ -23310,7 +23365,7 @@
             "q_1": 2,
             "q_2": 2,
             "owner": -1,
-            "z_1_2": 2
+            "z_kappa_1_2": 2
           },
           "status": "full_domain_static_witness",
           "suggested_remedy": "extend supplied templates or use a different abstraction; hypothesis only"
@@ -23338,49 +23393,49 @@
                 "q_1": 0,
                 "q_2": 0,
                 "owner": -1,
-                "z_1_2": 0
+                "z_kappa_1_2": 0
               },
               {
                 "q_1": 1,
                 "q_2": 0,
                 "owner": -1,
-                "z_1_2": 0
+                "z_kappa_1_2": 0
               },
               {
                 "q_1": 1,
                 "q_2": 0,
                 "owner": 0,
-                "z_1_2": 0
+                "z_kappa_1_2": 0
               },
               {
                 "q_1": 2,
                 "q_2": 0,
                 "owner": 0,
-                "z_1_2": 1
+                "z_kappa_1_2": 1
               },
               {
                 "q_1": 2,
                 "q_2": 1,
                 "owner": 0,
-                "z_1_2": 1
+                "z_kappa_1_2": 1
               },
               {
                 "q_1": 2,
                 "q_2": 1,
                 "owner": -1,
-                "z_1_2": 1
+                "z_kappa_1_2": 1
               },
               {
                 "q_1": 2,
                 "q_2": 1,
                 "owner": 1,
-                "z_1_2": 1
+                "z_kappa_1_2": 1
               },
               {
                 "q_1": 2,
                 "q_2": 2,
                 "owner": 1,
-                "z_1_2": 2
+                "z_kappa_1_2": 2
               }
             ],
             "verified_against_actual_actions": true
@@ -23394,17 +23449,24 @@
       "role_annotations": {
         "q": "0=away,1=wait,2=on",
         "owner": "-1=free;0..n-1=agent",
-        "edge_record": "on-indicator sum of endpoints",
+        "responsibility_arcs": [
+          "1->2",
+          "2->1"
+        ],
+        "kappa_classes": [
+          "kappa_1_2"
+        ],
+        "symmetric_arc_attribute": "reverse arcs share kappa class; sym=1",
         "provided_template_families": [
           "ownership",
-          "edge_consistency"
+          "kappa_consistency"
         ]
       },
       "initial": {
         "q_1": 0,
         "q_2": 0,
         "owner": -1,
-        "z_1_2": 0
+        "z_kappa_1_2": 0
       },
       "target": [
         "le",
@@ -23501,7 +23563,7 @@
             "unique_writer_component": "manager",
             "shared_writer": false
           },
-          "z_1_2": {
+          "z_kappa_1_2": {
             "domain": [
               0,
               1,
@@ -23597,13 +23659,13 @@
             ]
           },
           {
-            "name": "zeta_1_2",
-            "family": "edge_consistency",
+            "name": "zeta_kappa_1_2",
+            "family": "kappa_consistency",
             "expression": [
               "eq",
               [
                 "var",
-                "z_1_2"
+                "z_kappa_1_2"
               ],
               [
                 "add",
@@ -23656,7 +23718,7 @@
             "support": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "writer_components": [
               "agent_1",
@@ -23694,12 +23756,12 @@
             "frame_variables": [
               "q_2",
               "owner",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_1",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -23746,7 +23808,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -23787,7 +23849,7 @@
                 "const",
                 2
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "add",
                 [
                   "const",
@@ -23824,7 +23886,7 @@
             ],
             "inferred_write": [
               "q_1",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_2",
@@ -23833,7 +23895,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_1",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -23855,7 +23917,7 @@
                 "const",
                 0
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "ite",
                 [
                   "eq",
@@ -23884,7 +23946,7 @@
             ],
             "inferred_write": [
               "q_1",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_2",
@@ -23893,7 +23955,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_1",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -23940,7 +24002,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -23977,12 +24039,12 @@
             "frame_variables": [
               "q_1",
               "owner",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -24029,7 +24091,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -24070,7 +24132,7 @@
                 "const",
                 2
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "add",
                 [
                   "const",
@@ -24107,7 +24169,7 @@
             ],
             "inferred_write": [
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_1",
@@ -24116,7 +24178,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -24138,7 +24200,7 @@
                 "const",
                 0
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "ite",
                 [
                   "eq",
@@ -24167,7 +24229,7 @@
             ],
             "inferred_write": [
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_1",
@@ -24176,7 +24238,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -24223,7 +24285,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -24310,10 +24372,10 @@
             ],
             "inferred_write": [
               "q_1",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "omitted": [
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "extra": []
           }
@@ -24334,7 +24396,7 @@
         "retained": [
           "tau_1",
           "tau_2",
-          "zeta_1_2"
+          "zeta_kappa_1_2"
         ],
         "removed": [],
         "rounds_including_terminal_check": 1,
@@ -24404,16 +24466,16 @@
           },
           {
             "action": "Request_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -24467,7 +24529,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -24476,7 +24538,7 @@
           },
           {
             "action": "Enter_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -24484,7 +24546,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -24501,7 +24563,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -24510,14 +24572,14 @@
           },
           {
             "action": "Exit_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -24576,16 +24638,16 @@
           },
           {
             "action": "Request_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -24639,7 +24701,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -24648,7 +24710,7 @@
           },
           {
             "action": "Enter_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -24656,7 +24718,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -24673,7 +24735,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -24682,14 +24744,14 @@
           },
           {
             "action": "Exit_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -24737,7 +24799,7 @@
         "retained_clause_names": [
           "tau_1",
           "tau_2",
-          "zeta_1_2"
+          "zeta_kappa_1_2"
         ],
         "all_retained_minimum_contexts_valid": true,
         "safety_entailment_passed": true,
@@ -24762,16 +24824,16 @@
           },
           {
             "action": "Request_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -24825,7 +24887,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -24834,7 +24896,7 @@
           },
           {
             "action": "Enter_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -24842,7 +24904,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -24859,7 +24921,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -24868,14 +24930,14 @@
           },
           {
             "action": "Exit_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -24934,16 +24996,16 @@
           },
           {
             "action": "Request_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -24997,7 +25059,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -25006,7 +25068,7 @@
           },
           {
             "action": "Enter_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -25014,7 +25076,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -25031,7 +25093,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -25040,14 +25102,14 @@
           },
           {
             "action": "Exit_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -25110,10 +25172,10 @@
               ],
               "inferred_write": [
                 "q_1",
-                "z_1_2"
+                "z_kappa_1_2"
               ],
               "omitted": [
-                "z_1_2"
+                "z_kappa_1_2"
               ],
               "extra": []
             }
@@ -25124,7 +25186,7 @@
         {
           "kind": "shared_writer_interference",
           "evidence": {
-            "z_1_2": [
+            "z_kappa_1_2": [
               "agent_1",
               "agent_2"
             ]
@@ -25144,17 +25206,24 @@
       "role_annotations": {
         "q": "0=away,1=wait,2=on",
         "owner": "-1=free;0..n-1=agent",
-        "edge_record": "on-indicator sum of endpoints",
+        "responsibility_arcs": [
+          "1->2",
+          "2->1"
+        ],
+        "kappa_classes": [
+          "kappa_1_2"
+        ],
+        "symmetric_arc_attribute": "reverse arcs share kappa class; sym=1",
         "provided_template_families": [
           "ownership",
-          "edge_consistency"
+          "kappa_consistency"
         ]
       },
       "initial": {
         "q_1": 0,
         "q_2": 0,
         "owner": -1,
-        "z_1_2": 0
+        "z_kappa_1_2": 0
       },
       "target": [
         "le",
@@ -25251,7 +25320,7 @@
             "unique_writer_component": "manager",
             "shared_writer": false
           },
-          "z_1_2": {
+          "z_kappa_1_2": {
             "domain": [
               0,
               1,
@@ -25307,13 +25376,13 @@
             ]
           },
           {
-            "name": "zeta_1_2",
-            "family": "edge_consistency",
+            "name": "zeta_kappa_1_2",
+            "family": "kappa_consistency",
             "expression": [
               "eq",
               [
                 "var",
-                "z_1_2"
+                "z_kappa_1_2"
               ],
               [
                 "add",
@@ -25366,7 +25435,7 @@
             "support": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "writer_components": [
               "agent_1",
@@ -25404,11 +25473,11 @@
             "frame_variables": [
               "q_2",
               "owner",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -25455,7 +25524,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -25495,7 +25564,7 @@
                 "const",
                 2
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "add",
                 [
                   "const",
@@ -25532,7 +25601,7 @@
             ],
             "inferred_write": [
               "q_1",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_2",
@@ -25540,7 +25609,7 @@
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -25562,7 +25631,7 @@
                 "const",
                 0
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "ite",
                 [
                   "eq",
@@ -25591,7 +25660,7 @@
             ],
             "inferred_write": [
               "q_1",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_2",
@@ -25599,7 +25668,7 @@
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -25646,7 +25715,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -25682,12 +25751,12 @@
             "frame_variables": [
               "q_1",
               "owner",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -25734,7 +25803,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -25774,7 +25843,7 @@
                 "const",
                 2
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "add",
                 [
                   "const",
@@ -25811,7 +25880,7 @@
             ],
             "inferred_write": [
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_1",
@@ -25820,7 +25889,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -25842,7 +25911,7 @@
                 "const",
                 0
               ],
-              "z_1_2": [
+              "z_kappa_1_2": [
                 "ite",
                 [
                   "eq",
@@ -25871,7 +25940,7 @@
             ],
             "inferred_write": [
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_variables": [
               "q_1",
@@ -25880,7 +25949,7 @@
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
               "tau_2",
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ]
           },
           {
@@ -25927,7 +25996,7 @@
             "frame_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "frame_relation": "x'=x for every frame_variables entry",
             "affected_targets": [
@@ -26021,7 +26090,7 @@
       "template_pruning": {
         "retained": [
           "tau_2",
-          "zeta_1_2"
+          "zeta_kappa_1_2"
         ],
         "removed": [],
         "rounds_including_terminal_check": 1,
@@ -26033,7 +26102,7 @@
         "q_1": 2,
         "q_2": 2,
         "owner": 1,
-        "z_1_2": 2
+        "z_kappa_1_2": 2
       },
       "reachable_safety": {
         "status": "safe",
@@ -26081,16 +26150,16 @@
         "records": [
           {
             "action": "Request_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -26121,7 +26190,7 @@
           },
           {
             "action": "Enter_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -26129,7 +26198,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -26138,14 +26207,14 @@
           },
           {
             "action": "Exit_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -26189,16 +26258,16 @@
           },
           {
             "action": "Request_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -26232,7 +26301,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -26241,7 +26310,7 @@
           },
           {
             "action": "Enter_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -26249,7 +26318,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -26266,7 +26335,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -26275,14 +26344,14 @@
           },
           {
             "action": "Exit_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -26309,7 +26378,7 @@
       "generated_certificate": {
         "retained_clause_names": [
           "tau_2",
-          "zeta_1_2"
+          "zeta_kappa_1_2"
         ],
         "all_retained_minimum_contexts_valid": true,
         "safety_entailment_passed": false,
@@ -26319,16 +26388,16 @@
         "one_step_context_records": [
           {
             "action": "Request_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -26359,7 +26428,7 @@
           },
           {
             "action": "Enter_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -26367,7 +26436,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -26376,14 +26445,14 @@
           },
           {
             "action": "Exit_1",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -26427,16 +26496,16 @@
           },
           {
             "action": "Request_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [
-              "zeta_1_2"
+              "zeta_kappa_1_2"
             ],
             "cardinality": 1,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 2,
@@ -26470,7 +26539,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -26479,7 +26548,7 @@
           },
           {
             "action": "Enter_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
@@ -26487,7 +26556,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -26504,7 +26573,7 @@
               "owner",
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 4,
             "oracle_calls": 1,
@@ -26513,14 +26582,14 @@
           },
           {
             "action": "Exit_2",
-            "target": "zeta_1_2",
+            "target": "zeta_kappa_1_2",
             "status": "valid",
             "context": [],
             "cardinality": 0,
             "proof_interface_variables": [
               "q_1",
               "q_2",
-              "z_1_2"
+              "z_kappa_1_2"
             ],
             "proof_variable_width": 3,
             "oracle_calls": 1,
@@ -26556,7 +26625,7 @@
         {
           "kind": "shared_writer_interference",
           "evidence": {
-            "z_1_2": [
+            "z_kappa_1_2": [
               "agent_1",
               "agent_2"
             ]
@@ -26570,7 +26639,7 @@
             "q_1": 2,
             "q_2": 2,
             "owner": 1,
-            "z_1_2": 2
+            "z_kappa_1_2": 2
           },
           "status": "full_domain_static_witness",
           "suggested_remedy": "extend supplied templates or use a different abstraction; hypothesis only"
