@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="518.4pt" height="313.2pt" viewBox="0 0 518.4 313.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-06T18:21:05.091241</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 313.2 
+L 518.4 313.2 
+L 518.4 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 189.216 247.428 
+L 508.032 247.428 
+L 508.032 72.036 
+L 189.216 72.036 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 8px; font-family: 'Comic Sans MS'; text-anchor: middle" x="229.068" y="66.332875" transform="rotate(-0 229.068 66.332875)">Certificate</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 8px; font-family: 'Comic Sans MS'; text-anchor: middle" x="308.772" y="66.33225" transform="rotate(-0 308.772 66.33225)">BFS target</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font-size: 8px; font-family: 'Comic Sans MS'; text-anchor: middle" x="388.476" y="66.266" transform="rotate(-0 388.476 66.266)">Kept / supplied</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="font-size: 8px; font-family: 'Comic Sans MS'; text-anchor: middle" x="468.18" y="66.266" transform="rotate(-0 468.18 66.266)">Trace steps</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_5"/>
+     <g id="text_5">
+      <text style="font-size: 8px; font-family: 'Comic Sans MS'; text-anchor: end" x="185.716" y="84.979219" transform="rotate(-0 185.716 84.979219)">Missing ownership guard</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_6"/>
+     <g id="text_6">
+      <text style="font-size: 8px; font-family: 'Comic Sans MS'; text-anchor: end" x="185.716" y="104.467219" transform="rotate(-0 185.716 104.467219)">Early token release</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_7"/>
+     <g id="text_7">
+      <text style="font-size: 8px; font-family: 'Comic Sans MS'; text-anchor: end" x="185.716" y="123.955219" transform="rotate(-0 185.716 123.955219)">Split shared-state refresh</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_8"/>
+     <g id="text_8">
+      <text style="font-size: 8px; font-family: 'Comic Sans MS'; text-anchor: end" x="185.716" y="143.443219" transform="rotate(-0 185.716 143.443219)">Environment overwrite</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_9"/>
+     <g id="text_9">
+      <text style="font-size: 8px; font-family: 'Comic Sans MS'; text-anchor: end" x="185.716" y="162.931219" transform="rotate(-0 185.716 162.931219)">Incorrect write metadata</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_10"/>
+     <g id="text_10">
+      <text style="font-size: 8px; font-family: 'Comic Sans MS'; text-anchor: end" x="185.716" y="182.419219" transform="rotate(-0 185.716 182.419219)">Missing token template</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_11"/>
+     <g id="text_11">
+      <text style="font-size: 8px; font-family: 'Comic Sans MS'; text-anchor: end" x="185.716" y="201.907219" transform="rotate(-0 185.716 201.907219)">Missing budget guard</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_12"/>
+     <g id="text_12">
+      <text style="font-size: 8px; font-family: 'Comic Sans MS'; text-anchor: end" x="185.716" y="221.395219" transform="rotate(-0 185.716 221.395219)">Unsafe quota reclaim</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_13"/>
+     <g id="text_13">
+      <text style="font-size: 8px; font-family: 'Comic Sans MS'; text-anchor: end" x="185.716" y="240.883219" transform="rotate(-0 185.716 240.883219)">Missing budget template</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 190.01304 72.62064 
+L 268.12296 72.62064 
+L 268.12296 90.93936 
+L 190.01304 90.93936 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #ffaa24; opacity: 0.1"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 269.71704 72.62064 
+L 347.82696 72.62064 
+L 347.82696 90.93936 
+L 269.71704 90.93936 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #ff4148; opacity: 0.1"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 349.42104 72.62064 
+L 427.53096 72.62064 
+L 427.53096 90.93936 
+L 349.42104 90.93936 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #4740ff; opacity: 0.1"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 429.12504 72.62064 
+L 507.23496 72.62064 
+L 507.23496 90.93936 
+L 429.12504 90.93936 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #ff4148; opacity: 0.1"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 190.01304 92.10864 
+L 268.12296 92.10864 
+L 268.12296 110.42736 
+L 190.01304 110.42736 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #ffaa24; opacity: 0.1"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 269.71704 92.10864 
+L 347.82696 92.10864 
+L 347.82696 110.42736 
+L 269.71704 110.42736 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #ff4148; opacity: 0.1"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 349.42104 92.10864 
+L 427.53096 92.10864 
+L 427.53096 110.42736 
+L 349.42104 110.42736 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #4740ff; opacity: 0.1"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 429.12504 92.10864 
+L 507.23496 92.10864 
+L 507.23496 110.42736 
+L 429.12504 110.42736 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #ff4148; opacity: 0.1"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 190.01304 111.59664 
+L 268.12296 111.59664 
+L 268.12296 129.91536 
+L 190.01304 129.91536 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #329c40; opacity: 0.1"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 269.71704 111.59664 
+L 347.82696 111.59664 
+L 347.82696 129.91536 
+L 269.71704 129.91536 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #10bec9; opacity: 0.1"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 349.42104 111.59664 
+L 427.53096 111.59664 
+L 427.53096 129.91536 
+L 349.42104 129.91536 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #4740ff; opacity: 0.1"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 429.12504 111.59664 
+L 507.23496 111.59664 
+L 507.23496 129.91536 
+L 429.12504 129.91536 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #777777; opacity: 0.1"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 190.01304 131.08464 
+L 268.12296 131.08464 
+L 268.12296 149.40336 
+L 190.01304 149.40336 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #ffaa24; opacity: 0.1"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 269.71704 131.08464 
+L 347.82696 131.08464 
+L 347.82696 149.40336 
+L 269.71704 149.40336 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #ff4148; opacity: 0.1"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 349.42104 131.08464 
+L 427.53096 131.08464 
+L 427.53096 149.40336 
+L 349.42104 149.40336 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #4740ff; opacity: 0.1"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 429.12504 131.08464 
+L 507.23496 131.08464 
+L 507.23496 149.40336 
+L 429.12504 149.40336 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #ff4148; opacity: 0.1"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 190.01304 150.57264 
+L 268.12296 150.57264 
+L 268.12296 168.89136 
+L 190.01304 168.89136 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #9a32ac; opacity: 0.1"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 269.71704 150.57264 
+L 347.82696 150.57264 
+L 347.82696 168.89136 
+L 269.71704 168.89136 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #10bec9; opacity: 0.1"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 349.42104 150.57264 
+L 427.53096 150.57264 
+L 427.53096 168.89136 
+L 349.42104 168.89136 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #4740ff; opacity: 0.1"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 429.12504 150.57264 
+L 507.23496 150.57264 
+L 507.23496 168.89136 
+L 429.12504 168.89136 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #777777; opacity: 0.1"/>
+   </g>
+   <g id="patch_23">
+    <path d="M 190.01304 170.06064 
+L 268.12296 170.06064 
+L 268.12296 188.37936 
+L 190.01304 188.37936 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #ffaa24; opacity: 0.1"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 269.71704 170.06064 
+L 347.82696 170.06064 
+L 347.82696 188.37936 
+L 269.71704 188.37936 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #10bec9; opacity: 0.1"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 349.42104 170.06064 
+L 427.53096 170.06064 
+L 427.53096 188.37936 
+L 349.42104 188.37936 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #4740ff; opacity: 0.1"/>
+   </g>
+   <g id="patch_26">
+    <path d="M 429.12504 170.06064 
+L 507.23496 170.06064 
+L 507.23496 188.37936 
+L 429.12504 188.37936 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #777777; opacity: 0.1"/>
+   </g>
+   <g id="patch_27">
+    <path d="M 190.01304 189.54864 
+L 268.12296 189.54864 
+L 268.12296 207.86736 
+L 190.01304 207.86736 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #ffaa24; opacity: 0.1"/>
+   </g>
+   <g id="patch_28">
+    <path d="M 269.71704 189.54864 
+L 347.82696 189.54864 
+L 347.82696 207.86736 
+L 269.71704 207.86736 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #ff4148; opacity: 0.1"/>
+   </g>
+   <g id="patch_29">
+    <path d="M 349.42104 189.54864 
+L 427.53096 189.54864 
+L 427.53096 207.86736 
+L 349.42104 207.86736 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #4740ff; opacity: 0.1"/>
+   </g>
+   <g id="patch_30">
+    <path d="M 429.12504 189.54864 
+L 507.23496 189.54864 
+L 507.23496 207.86736 
+L 429.12504 207.86736 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #ff4148; opacity: 0.1"/>
+   </g>
+   <g id="patch_31">
+    <path d="M 190.01304 209.03664 
+L 268.12296 209.03664 
+L 268.12296 227.35536 
+L 190.01304 227.35536 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #ffaa24; opacity: 0.1"/>
+   </g>
+   <g id="patch_32">
+    <path d="M 269.71704 209.03664 
+L 347.82696 209.03664 
+L 347.82696 227.35536 
+L 269.71704 227.35536 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #ff4148; opacity: 0.1"/>
+   </g>
+   <g id="patch_33">
+    <path d="M 349.42104 209.03664 
+L 427.53096 209.03664 
+L 427.53096 227.35536 
+L 349.42104 227.35536 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #4740ff; opacity: 0.1"/>
+   </g>
+   <g id="patch_34">
+    <path d="M 429.12504 209.03664 
+L 507.23496 209.03664 
+L 507.23496 227.35536 
+L 429.12504 227.35536 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #ff4148; opacity: 0.1"/>
+   </g>
+   <g id="patch_35">
+    <path d="M 190.01304 228.52464 
+L 268.12296 228.52464 
+L 268.12296 246.84336 
+L 190.01304 246.84336 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #ffaa24; opacity: 0.1"/>
+   </g>
+   <g id="patch_36">
+    <path d="M 269.71704 228.52464 
+L 347.82696 228.52464 
+L 347.82696 246.84336 
+L 269.71704 246.84336 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #10bec9; opacity: 0.1"/>
+   </g>
+   <g id="patch_37">
+    <path d="M 349.42104 228.52464 
+L 427.53096 228.52464 
+L 427.53096 246.84336 
+L 349.42104 246.84336 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #4740ff; opacity: 0.1"/>
+   </g>
+   <g id="patch_38">
+    <path d="M 429.12504 228.52464 
+L 507.23496 228.52464 
+L 507.23496 246.84336 
+L 429.12504 246.84336 
+z
+" clip-path="url(#pf49cf17db7)" style="fill: #777777; opacity: 0.1"/>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #ffaa24" x="229.068" y="83.973232" transform="rotate(-0 229.068 83.973232)">Not proved</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #ff4148" x="308.772" y="84.00876" transform="rotate(-0 308.772 84.00876)">Unsafe</text>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #4740ff" x="388.476" y="84.00876" transform="rotate(-0 388.476 84.00876)">2/3</text>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #ff4148" x="468.18" y="84.00876" transform="rotate(-0 468.18 84.00876)">5</text>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #ffaa24" x="229.068" y="103.461232" transform="rotate(-0 229.068 103.461232)">Not proved</text>
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #ff4148" x="308.772" y="103.49676" transform="rotate(-0 308.772 103.49676)">Unsafe</text>
+   </g>
+   <g id="text_20">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #4740ff" x="388.476" y="103.49676" transform="rotate(-0 388.476 103.49676)">2/3</text>
+   </g>
+   <g id="text_21">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #ff4148" x="468.18" y="103.49676" transform="rotate(-0 468.18 103.49676)">7</text>
+   </g>
+   <g id="text_22">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #329c40" x="229.068" y="122.98476" transform="rotate(-0 229.068 122.98476)">Proved</text>
+   </g>
+   <g id="text_23">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #10bec9" x="308.772" y="122.98476" transform="rotate(-0 308.772 122.98476)">Safe</text>
+   </g>
+   <g id="text_24">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #4740ff" x="388.476" y="122.98476" transform="rotate(-0 388.476 122.98476)">2/3</text>
+   </g>
+   <g id="text_25">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #777777" x="468.18" y="122.98476" transform="rotate(-0 468.18 122.98476)">-</text>
+   </g>
+   <g id="text_26">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #ffaa24" x="229.068" y="142.437232" transform="rotate(-0 229.068 142.437232)">Not proved</text>
+   </g>
+   <g id="text_27">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #ff4148" x="308.772" y="142.47276" transform="rotate(-0 308.772 142.47276)">Unsafe</text>
+   </g>
+   <g id="text_28">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #4740ff" x="388.476" y="142.47276" transform="rotate(-0 388.476 142.47276)">1/3</text>
+   </g>
+   <g id="text_29">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #ff4148" x="468.18" y="142.47276" transform="rotate(-0 468.18 142.47276)">7</text>
+   </g>
+   <g id="text_30">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #9a32ac" x="229.068" y="161.96076" transform="rotate(-0 229.068 161.96076)">Blocked</text>
+   </g>
+   <g id="text_31">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #10bec9" x="308.772" y="161.96076" transform="rotate(-0 308.772 161.96076)">Safe</text>
+   </g>
+   <g id="text_32">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #4740ff" x="388.476" y="161.96076" transform="rotate(-0 388.476 161.96076)">3/3</text>
+   </g>
+   <g id="text_33">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #777777" x="468.18" y="161.96076" transform="rotate(-0 468.18 161.96076)">-</text>
+   </g>
+   <g id="text_34">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #ffaa24" x="229.068" y="181.413232" transform="rotate(-0 229.068 181.413232)">Not proved</text>
+   </g>
+   <g id="text_35">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #10bec9" x="308.772" y="181.44876" transform="rotate(-0 308.772 181.44876)">Safe</text>
+   </g>
+   <g id="text_36">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #4740ff" x="388.476" y="181.44876" transform="rotate(-0 388.476 181.44876)">2/2</text>
+   </g>
+   <g id="text_37">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #777777" x="468.18" y="181.44876" transform="rotate(-0 468.18 181.44876)">-</text>
+   </g>
+   <g id="text_38">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #ffaa24" x="229.068" y="200.901232" transform="rotate(-0 229.068 200.901232)">Not proved</text>
+   </g>
+   <g id="text_39">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #ff4148" x="308.772" y="200.93676" transform="rotate(-0 308.772 200.93676)">Unsafe</text>
+   </g>
+   <g id="text_40">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #4740ff" x="388.476" y="200.93676" transform="rotate(-0 388.476 200.93676)">2/3</text>
+   </g>
+   <g id="text_41">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #ff4148" x="468.18" y="200.93676" transform="rotate(-0 468.18 200.93676)">4</text>
+   </g>
+   <g id="text_42">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #ffaa24" x="229.068" y="220.389232" transform="rotate(-0 229.068 220.389232)">Not proved</text>
+   </g>
+   <g id="text_43">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #ff4148" x="308.772" y="220.42476" transform="rotate(-0 308.772 220.42476)">Unsafe</text>
+   </g>
+   <g id="text_44">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #4740ff" x="388.476" y="220.42476" transform="rotate(-0 388.476 220.42476)">2/3</text>
+   </g>
+   <g id="text_45">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #ff4148" x="468.18" y="220.42476" transform="rotate(-0 468.18 220.42476)">5</text>
+   </g>
+   <g id="text_46">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #ffaa24" x="229.068" y="239.877232" transform="rotate(-0 229.068 239.877232)">Not proved</text>
+   </g>
+   <g id="text_47">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #10bec9" x="308.772" y="239.91276" transform="rotate(-0 308.772 239.91276)">Safe</text>
+   </g>
+   <g id="text_48">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #4740ff" x="388.476" y="239.91276" transform="rotate(-0 388.476 239.91276)">2/2</text>
+   </g>
+   <g id="text_49">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Comic Sans MS'; text-anchor: middle; fill: #777777" x="468.18" y="239.91276" transform="rotate(-0 468.18 239.91276)">-</text>
+   </g>
+  </g>
+  <g id="text_50">
+   <text style="font-weight: 700; font-size: 12px; font-family: 'Comic Sans MS'; text-anchor: middle" x="259.2" y="16.312125" transform="rotate(-0 259.2 16.312125)">D | Failure to prove and reachable unsafety are distinct</text>
+  </g>
+  <g id="text_51">
+   <text style="font-size: 8px; font-family: 'Comic Sans MS'; fill: #444444" transform="translate(198.95325 273.211563)">All 6 correct instances: proved and safe.</text>
+   <text style="font-size: 8px; font-family: 'Comic Sans MS'; fill: #444444" transform="translate(175.14825 281.88)">9 mutations: 5 unsafe, 4 safe; 1 blocked by metadata.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pf49cf17db7">
+   <rect x="189.216" y="72.036" width="318.816" height="175.392"/>
+  </clipPath>
+ </defs>
+</svg>

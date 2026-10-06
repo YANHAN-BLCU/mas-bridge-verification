@@ -1,0 +1,10 @@
+case,certificate_status,BFS_target_status,retained_templates,supplied_templates,reachable_counterexample_steps
+bridge_n2_missing_ownership_guard,not_proved_by_retained_library,unsafe,2,3,5
+bridge_n2_early_release,not_proved_by_retained_library,unsafe,2,3,7
+bridge_n2_split_refresh,proved,safe,2,3,
+bridge_n2_environment_overwrite,not_proved_by_retained_library,unsafe,1,3,7
+bridge_n2_corrupted_write_metadata,blocked_write_metadata_mismatch,safe,3,3,
+bridge_n2_missing_template,not_proved_by_retained_library,safe,2,2,
+capacity_n2_range0to1_missing_budget_guard,not_proved_by_retained_library,unsafe,2,3,4
+capacity_n2_range0to1_unsafe_reclaim,not_proved_by_retained_library,unsafe,2,3,5
+capacity_n2_range0to1_missing_template,not_proved_by_retained_library,safe,2,2,

@@ -1,0 +1,163 @@
+{
+  "random_seed": null,
+  "deterministic": true,
+  "font": "Comic Sans MS",
+  "palette": [
+    "#FF4148",
+    "#4740FF",
+    "#329C40",
+    "#FFAA24",
+    "#9A32AC",
+    "#10BEC9"
+  ],
+  "export_dpi": 600,
+  "svg_text": "editable",
+  "pdf_fonttype": 42,
+  "source_sha256": {
+    "results\\capacity_scan.csv": "90521d3e3897396667b512244e8c9ebd7a4ae0f2ef861844657631f67072d908",
+    "results\\certificate_obligations.csv": "0e4da7265642cdbcb7aca4fa8a80cd4466f2c12d56dc0eda595e651476d1beed",
+    "results\\negative_tests.csv": "850644c2766ef4988e241516b1beb059c573284fccc8065c4f627b79b79f5548",
+    "results\\search_results.csv": "2dbb6ff977b8656389a261002818ee26e9674fe376b45b4f1f19b9c27ca9c77b",
+    "results\\certificate_generation_results.json": "68830a7883b1aacc1707bef8b528711d7c0195603f395644870a16fc6ef11ed2",
+    "results\\minimal_context_results.json": "baa4341b33a4b422053afcb64630a0c5829e83528aac8df73fb7325c583de4a9",
+    "results\\verification_summary.json": "242efa7642ecf642623ba56f287c0982f96cc495111619fc9fc231a10b0c0a86",
+    "traces\\C_early_release.json": "68b857b4153077b44f881972795e166cc7389795df079afa013db70de4fcc991",
+    "traces\\C_environment_write.json": "ae48b971c00d02852146c726d44f976fe2302ed670b27efa550e851ee6561da7",
+    "traces\\C_non_atomic_quota.json": "1831fdcde8d306f025680133f1aab0fbc476ce8a1b327a73f5165cff3eec5bc3",
+    "traces\\C_stale_bridge.json": "bde141a33d7b49d5d8f7432b7494f66fcd54e744aec211b2e6c1b8c92437d23b"
+  },
+  "figures": [
+    {
+      "name": "fig01_A_bridge_scaling",
+      "caption_cn": "实验 A 的窄桥规模扫描。左图为 BFS 已发现状态数（对数轴）；反例配置在首个反例处停止，安全配置穷尽搜索。右图只绘制存在反例的配置，令牌协议的安全结果不记作零步反例。共 27 个配置。",
+      "caption_en": "Bridge size sweep in Experiment A (27 configurations). Discovered states use a log axis; unsafe searches stop at the first counterexample and safe searches are exhaustive. Counterexample length is defined only for unsafe configurations.",
+      "claim": "Local and cached bridge protocols admit violations at every tested size; the atomic token protocol is safe in these finite models.",
+      "sources": [
+        "search_results.csv"
+      ]
+    },
+    {
+      "name": "fig02_A_quota_outcome_map",
+      "caption_cn": "实验 A 配额模型全部 224 个配置的结果。行对应单体上限 r，列对应容量 B；每个子图展示四类协议与智能体数 n。方块表示穷尽安全，叉号表示可达反例。",
+      "caption_en": "Outcomes for all 224 quota configurations in Experiment A. Panel rows vary the local bound r and columns vary capacity B. Squares denote exhaustive safety; crosses denote reachable counterexamples.",
+      "claim": "Atomic quota is safe across the tested grid; local, pairwise and cached constraints admit violations when the collective load exceeds capacity.",
+      "sources": [
+        "search_results.csv"
+      ]
+    },
+    {
+      "name": "fig03_A_static_capacity_gaps",
+      "caption_cn": "实验 A 静态容量扫描（105 个配置）。66 个配置存在满足全部个体及两两约束、却违反群体容量的见证。红色单元中的整数是已保存见证的超额量 Σp_i−B，不是最大超额；蓝色横线表示穷尽扫描未发现缺口。",
+      "caption_en": "Static capacity scan over 105 configurations. A gap exists in 66 configurations. Red-cell values are the overload of the saved witness, sum(p_i)-B, rather than maximal overload; cyan cells mark configurations with no gap after exhaustive scanning.",
+      "claim": "Pairwise capacity checks do not generally imply the collective constraint.",
+      "sources": [
+        "capacity_scan.csv"
+      ]
+    },
+    {
+      "name": "fig04_B_certificate_coverage",
+      "caption_cn": "实验 B 的动作级证书覆盖。左图统计各有限域配置的动作记录数；右图每个单元显示通过该项检查的动作记录数。各列重复检查同一组 140 条记录，不能相加视作独立样本。Decl. 为读写声明，Aff./Frame 为受影响及未受影响保持，Interf. 为组件干扰，Global 为全局一步保持。",
+      "caption_en": "Action-level certificate coverage in Experiment B. The left panel counts action records for eight finite configurations; cells on the right count records passing each check. Columns evaluate the same 140 records and are not independent samples.",
+      "claim": "The supplied atomic protocols pass all declared-domain certificate checks for all eight configurations.",
+      "sources": [
+        "certificate_obligations.csv"
+      ]
+    },
+    {
+      "name": "fig05_C_coordination_failure_traces",
+      "caption_cn": "实验 C 四种协调失效的独立重放轨迹。窄桥负载为在桥智能体数（容量 1）；配额负载为总消耗（容量 2）。纵轴为负载/容量，虚线是安全边界。红叉仅标注最终违规状态；反例长度分别为 6、7、6、7 步。",
+      "caption_en": "Independently replayed traces for four coordination failures in Experiment C. Bridge load counts agents on the bridge (capacity 1); quota load is total consumption (capacity 2). The dashed line is the safety boundary, with final violations marked by crosses.",
+      "claim": "Each coordination mutation produces a replayable capacity violation in its supplied finite model.",
+      "sources": [
+        "negative_tests.csv",
+        "traces/C_*.json"
+      ]
+    },
+    {
+      "name": "fig06_D_minimum_context_scaling",
+      "caption_cn": "实验 D 显式共享类窄桥的证明前提计数。全部前提、仅受影响前提与基数最小前提在同一批动作–目标对上比较；最小前提出现次数为 6、18、36，相对全部前提减少 90.0%、93.3%、95.5%。指标只度量逐目标前提的重复表示，不代表运行时间、通信或状态空间收益。",
+      "caption_en": "Proof-premise occurrences for the explicit shared-class bridge in Experiment D. All methods use the same action-target pairs. Minimum-context occurrences are 6, 18 and 36, a reduction of 90.0%, 93.3% and 95.5%. This metric describes premise representation, not runtime or communication speedup.",
+      "claim": "The minimum-context representation uses fewer repeated premises than the full or affected-only representations.",
+      "sources": [
+        "minimal_context_results.json"
+      ]
+    },
+    {
+      "name": "fig07_D_action_target_contexts",
+      "caption_cn": "实验 D 在 n=4 时的逐动作、逐目标最小前提矩阵。20 个动作对应 10 个不变式子句，共 80 个受影响动作–目标对；44 个取空上下文，36 个仅需一个前提。灰格为未受影响目标，由帧条件保持。tok-i 对应所有权子句，share-ij 对应共享类一致性子句；数值不统计动作守卫或环境假设。",
+      "caption_en": "Minimum premise cardinalities for n=4 in Experiment D. Of 80 affected action-target pairs, 44 require no premise and 36 require one. Gray cells are unaffected targets preserved by frame conditions. tok-i denotes ownership and share-ij shared-class consistency; guards and environment assumptions are excluded.",
+      "claim": "Proof dependencies are sparse and action-specific in the fixed shared-class bridge clause family.",
+      "sources": [
+        "minimal_context_results.json"
+      ]
+    },
+    {
+      "name": "fig08_D_certificate_diagnosis",
+      "caption_cn": "实验 D 九个故障及元数据变体的证书诊断。证书状态、BFS 目标安全、保留/提供模板数与可达反例长度分别记录。共有 5 个变体出现目标反例、4 个目标安全；缺失模板可能使证书无法证明而协议仍安全，写集元数据错误则阻断证书。拆分刷新删除一致性模板后仍证明目标安全。另有 6 个正确实例均已证明且安全。",
+      "caption_en": "Certificate diagnostics for nine mutations in Experiment D. Certificate status, BFS target safety, retained/supplied templates and reachable trace lengths are reported separately. Five mutations are unsafe and four are safe. Missing templates can prevent proof without causing unsafety; incorrect write metadata blocks certification. All six correct instances are proved and safe.",
+      "claim": "Certificate failure, metadata rejection and a reachable safety violation are different diagnostic outcomes.",
+      "sources": [
+        "certificate_generation_results.json"
+      ]
+    }
+  ],
+  "qa": [
+    {
+      "figure": "fig01_A_bridge_scaling",
+      "canvas_width_mm": 182.9,
+      "canvas_height_mm": 77.5,
+      "text_outside_canvas": [],
+      "source_csv": "source_data/fig01_A_bridge_scaling.csv"
+    },
+    {
+      "figure": "fig02_A_quota_outcome_map",
+      "canvas_width_mm": 182.9,
+      "canvas_height_mm": 105.4,
+      "text_outside_canvas": [],
+      "source_csv": "source_data/fig02_A_quota_outcome_map.csv"
+    },
+    {
+      "figure": "fig03_A_static_capacity_gaps",
+      "canvas_width_mm": 182.9,
+      "canvas_height_mm": 85.1,
+      "text_outside_canvas": [],
+      "source_csv": "source_data/fig03_A_static_capacity_gaps.csv"
+    },
+    {
+      "figure": "fig04_B_certificate_coverage",
+      "canvas_width_mm": 182.9,
+      "canvas_height_mm": 95.2,
+      "text_outside_canvas": [],
+      "source_csv": "source_data/fig04_B_certificate_coverage.csv"
+    },
+    {
+      "figure": "fig05_C_coordination_failure_traces",
+      "canvas_width_mm": 182.9,
+      "canvas_height_mm": 114.3,
+      "text_outside_canvas": [],
+      "source_csv": "source_data/fig05_C_coordination_failure_traces.csv"
+    },
+    {
+      "figure": "fig06_D_minimum_context_scaling",
+      "canvas_width_mm": 182.9,
+      "canvas_height_mm": 77.5,
+      "text_outside_canvas": [],
+      "source_csv": "source_data/fig06_D_minimum_context_scaling.csv"
+    },
+    {
+      "figure": "fig07_D_action_target_contexts",
+      "canvas_width_mm": 182.9,
+      "canvas_height_mm": 132.1,
+      "text_outside_canvas": [],
+      "source_csv": "source_data/fig07_D_action_target_contexts.csv"
+    },
+    {
+      "figure": "fig08_D_certificate_diagnosis",
+      "canvas_width_mm": 182.9,
+      "canvas_height_mm": 110.5,
+      "text_outside_canvas": [],
+      "source_csv": "source_data/fig08_D_certificate_diagnosis.csv"
+    }
+  ],
+  "render_warnings": []
+}

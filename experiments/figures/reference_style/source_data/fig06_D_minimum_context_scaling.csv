@@ -1,0 +1,4 @@
+n,affected_action_target_pairs,full_context_occurrences,affected_only_occurrences,minimum_context_occurrences,reduction_percent,maximum_minimum_cardinality
+2,20,60,40,6,90.0,1
+3,45,270,135,18,93.33333333333333,1
+4,80,800,320,36,95.5,1
