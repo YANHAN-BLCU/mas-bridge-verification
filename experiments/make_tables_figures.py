@@ -35,17 +35,19 @@ def make_report():
     static = read_csv("capacity_scan.csv")
     cert = read_csv("certificate_obligations.csv")
     negative = read_csv("negative_tests.csv")
+    minimal = json.loads((RESULTS / "minimal_context_results.json").read_text(encoding="utf-8"))
+    generated = json.loads((RESULTS / "certificate_generation_results.json").read_text(encoding="utf-8"))
     status = Counter(r["status"] for r in search)
     static_status = Counter(r["status"] for r in static)
 
     lines = [
-        "# 实验 A/B/C 报告：从安全反例到桥接不变量",
+        "# 实验 A/B/C/D 报告：从安全反例到桥接不变量",
         "",
         "> 本报告由 `python -m experiments.make_tables_figures` 根据当前 CSV/JSON 自动生成。",
         "",
         "## 1. 复现范围",
         "",
-        "实验 A 包含窄桥 `n=2…10` 的 27 个配置、配额 `n=2…8,B=1…4,r∈{1,2}` 的 224 个配置，以及 105 个静态容量配置。实验 B 检查窄桥 token `n=2…5` 和配额 `B=2,r=1,n=2…5`，共 8 个完整有限域配置。实验 C 检查四个一次只改变一个协调条件的负面变体。",
+        "实验 A 包含窄桥 `n=2…10` 的 27 个配置、配额 `n=2…8,B=1…4,r∈{1,2}` 的 224 个配置，以及 105 个静态容量配置。实验 B 检查窄桥 token `n=2…5` 和配额 `B=2,r=1,n=2…5`，共 8 个完整有限域配置。实验 C 检查四个一次只改变一个协调条件的负面变体。实验 D 增加显式边状态、最小证明上下文、模板筛选、失败诊断和容量更新条件核验。",
         "",
         "## 2. 实验 A：可达性与静态容量",
         "",
@@ -105,14 +107,22 @@ def make_report():
         "",
         "四个变体都产生目标安全性质反例，且轨迹独立重放通过。`candidate_invariant_status=FAIL` 表示桥接不变量在某个合法声明域状态的后继上失效；它与可达目标反例分别记录，不能混同为同一义务。",
         "",
-        "## 5. 可复现性与边界",
+        "## 5. 实验 D：上下文综合与证书生成",
+        "",
+        "显式边窄桥在 `n=2,3,4` 上分别枚举 %d、%d、%d 个声明域状态；每个模型的初始化和安全蕴含均通过。泛化最小上下文核验覆盖 **%d** 个冲突族，证书模板筛选覆盖 **%d** 个有限模型，容量更新必要充分条件核验覆盖 **%d** 对有限前后状态。" % (
+            minimal["bridge"][0]["declared_domain_states"], minimal["bridge"][1]["declared_domain_states"], minimal["bridge"][2]["declared_domain_states"],
+            minimal["generic_synthesis"]["exhaustive_conflict_families"], generated["generic_pruning_validation"]["checked_models"], generated["capacity_update_iff_validation"]["total_pairs"]),
+        "",
+        "D 的正确模型包含 6 个有限实例，证书状态全部为 `proved`；另检查 9 个故障/元数据变体，分别输出模板删除、目标安全状态、可达性和写集诊断。实验通过语法支持集、读写集、并行更新和帧条件的一致性检查，但不声称实现不受限的不变量综合。",
+        "",
+        "## 6. 可复现性与边界",
         "",
         "- 搜索使用完整 BFS，并保存动作、前状态、后状态和违反性质；状态上限为 2,000,000。本次没有配置触及上限，因此没有 `UNKNOWN_LIMIT`。",
         "- `python -m experiments.verify_outputs` 对所有 165 条动态反例逐条重放、对 105 个静态配置逐域核对、对证书和负例表执行一致性断言，输出 `results/verification_summary.json`。",
         "- 运行环境和命令记录在 `environment.json`；实验确定性运行，不使用随机种子。",
         "- 结论仅适用于代码定义的有限状态域和动作语义。它支持“局部/两两条件不足、原子桥接协议恢复安全”的有限实例证据，不替代参数化证明，也不提供未执行的成本优越性结论。",
         "",
-        "## 6. 代表性见证",
+        "## 7. 代表性见证",
         "",
         "详细见证保存在 `traces/`。例如 `A_bridge_n2_local.json` 展示两个 agent 依次进入导致 `Σ_i[q_i=2]>1`；`A_static_n3_B2_r1.json` 展示三维整数向量满足所有两两约束但总和超过容量；`C_early_release.json` 展示提前释放使 owner 与在桥状态失配。",
         "",

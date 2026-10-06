@@ -88,11 +88,31 @@ def verify_negative():
     return len(rows)
 
 
+def verify_experiment_d():
+    """Audit the independently supplied D artifacts from their JSON outputs."""
+    minimal = json.loads((RESULTS / "minimal_context_results.json").read_text(encoding="utf-8"))
+    generated = json.loads((RESULTS / "certificate_generation_results.json").read_text(encoding="utf-8"))
+    assert minimal["generic_synthesis"] == {"exhaustive_conflict_families": 276, "passed": True}
+    assert [row["n"] for row in minimal["bridge"]] == [2, 3, 4]
+    assert all(row["enumerated_states"] == row["declared_domain_states"] for row in minimal["bridge"])
+    assert all(row["initialization_passed"] and row["safety_implication_passed"] for row in minimal["bridge"])
+    pruning = generated["generic_pruning_validation"]
+    assert pruning["checked_models"] == 4032 and pruning["unique_greatest_feasible_subset_passed"]
+    assert generated["generic_minimum_context_validation"]["exhaustive_conflict_families"] == 276
+    assert generated["capacity_update_iff_validation"]["total_pairs"] == 2000
+    assert len(generated["correct_models"]) == 6
+    assert all(row["certificate_status"] == "proved" for row in generated["correct_models"])
+    assert len(generated["fault_mutations"]) == 9
+    return {"context_families": 276, "template_models": 4032, "capacity_pairs": 2000,
+            "correct_models": 6, "fault_variants": 9}
+
+
 def main():
     a, ar = verify_search()
     s, sw = verify_static()
     b = verify_certificates()
     c = verify_negative()
+    d = verify_experiment_d()
     summary = {
         "search_configs": a,
         "replayed_counterexamples": ar,
@@ -100,6 +120,7 @@ def main():
         "static_witnesses": sw,
         "certificate_rows": b,
         "negative_cases": c,
+        "experiment_d": d,
         "status": "PASS",
     }
     (RESULTS / "verification_summary.json").write_text(

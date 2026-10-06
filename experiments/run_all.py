@@ -253,6 +253,7 @@ def main():
             memory_gb=None
     env={'python':sys.version,'platform':platform.platform(),'cpu':platform.processor(),'memory_gb':memory_gb,
          'git_commit':commit,'model_sha256':sha256(ROOT/'models.py'),'runner_sha256':sha256(ROOT/'run_all.py'),
+         'artifact_sha256':{name:sha256(ROOT/name) for name in ('minimal_context_artifact.py','certificate_generation_artifact.py','verify_outputs.py','make_tables_figures.py')},
          'deterministic':True,'random_seed':None,'command':'python -m experiments.run_all'}
     (ROOT/'environment.json').write_text(json.dumps(env,ensure_ascii=False,indent=2),encoding='utf8')
     print(json.dumps({'A_search':len(a),'A_static':len(static),'A_counterexamples':sum(x['status']=='COUNTEREXAMPLE' for x in a),'B_obligations':len(b),'B_pass':sum(x['result']=='PASS' for x in b),'B_fail':sum(x['result']=='FAIL' for x in b),'C_cases':len(c),'C_counterexamples':sum(x['status']=='COUNTEREXAMPLE' for x in c)},ensure_ascii=False))

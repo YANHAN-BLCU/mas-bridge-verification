@@ -5,5 +5,12 @@
   "static_witnesses": 66,
   "certificate_rows": 140,
   "negative_cases": 4,
+  "experiment_d": {
+    "context_families": 276,
+    "template_models": 4032,
+    "capacity_pairs": 2000,
+    "correct_models": 6,
+    "fault_variants": 9
+  },
   "status": "PASS"
 }

@@ -1,0 +1,1378 @@
+{
+  "scope": "new full-domain one-step proof-context checks, not the old BFS experiments",
+  "generic_synthesis": {
+    "exhaustive_conflict_families": 276,
+    "passed": true
+  },
+  "summary_lower_bound": [
+    {
+      "k": 1,
+      "distinct_required_summary_values": 3
+    },
+    {
+      "k": 2,
+      "distinct_required_summary_values": 4
+    },
+    {
+      "k": 3,
+      "distinct_required_summary_values": 5
+    },
+    {
+      "k": 4,
+      "distinct_required_summary_values": 6
+    },
+    {
+      "k": 5,
+      "distinct_required_summary_values": 7
+    },
+    {
+      "k": 6,
+      "distinct_required_summary_values": 8
+    }
+  ],
+  "bridge": [
+    {
+      "n": 2,
+      "explicit_edge_variables": 1,
+      "candidate_clauses": 3,
+      "declared_domain_states": 81,
+      "enumerated_states": 81,
+      "non_stutter_transitions": 180,
+      "semantic_frame_checks": 180,
+      "independent_endpoint_checks": 180,
+      "initialization_passed": true,
+      "safety_implication_passed": true,
+      "invariant_states": 16,
+      "affected_action_target_pairs": 20,
+      "full_context_clause_occurrences": 60,
+      "affected_only_clause_occurrences": 40,
+      "minimum_context_clause_occurrences": 6,
+      "maximum_minimum_context_cardinality": 1,
+      "elapsed_seconds": 0.000498,
+      "records": [
+        {
+          "action": "Request_1",
+          "target": "tau_1",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Request_1",
+          "target": "zeta_1_2",
+          "context": [
+            "zeta_1_2"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 2
+        },
+        {
+          "action": "Request_2",
+          "target": "tau_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Request_2",
+          "target": "zeta_1_2",
+          "context": [
+            "zeta_1_2"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 2
+        },
+        {
+          "action": "Grant_1",
+          "target": "tau_1",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Grant_1",
+          "target": "tau_2",
+          "context": [
+            "tau_2"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 2
+        },
+        {
+          "action": "Grant_2",
+          "target": "tau_1",
+          "context": [
+            "tau_1"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 2
+        },
+        {
+          "action": "Grant_2",
+          "target": "tau_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_1",
+          "target": "tau_1",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_1",
+          "target": "zeta_1_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_2",
+          "target": "tau_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_2",
+          "target": "zeta_1_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_1",
+          "target": "tau_1",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_1",
+          "target": "zeta_1_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_2",
+          "target": "tau_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_2",
+          "target": "zeta_1_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Release_1",
+          "target": "tau_1",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Release_1",
+          "target": "tau_2",
+          "context": [
+            "tau_2"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 2
+        },
+        {
+          "action": "Release_2",
+          "target": "tau_1",
+          "context": [
+            "tau_1"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 2
+        },
+        {
+          "action": "Release_2",
+          "target": "tau_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "explicit_edge_variables": 3,
+      "candidate_clauses": 6,
+      "declared_domain_states": 2916,
+      "enumerated_states": 2916,
+      "non_stutter_transitions": 8748,
+      "semantic_frame_checks": 8748,
+      "independent_endpoint_checks": 8748,
+      "initialization_passed": true,
+      "safety_implication_passed": true,
+      "invariant_states": 44,
+      "affected_action_target_pairs": 45,
+      "full_context_clause_occurrences": 270,
+      "affected_only_clause_occurrences": 135,
+      "minimum_context_clause_occurrences": 18,
+      "maximum_minimum_context_cardinality": 1,
+      "elapsed_seconds": 0.013019,
+      "records": [
+        {
+          "action": "Request_1",
+          "target": "tau_1",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Request_1",
+          "target": "zeta_1_2",
+          "context": [
+            "zeta_1_2"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 16
+        },
+        {
+          "action": "Request_1",
+          "target": "zeta_1_3",
+          "context": [
+            "zeta_1_3"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 16
+        },
+        {
+          "action": "Request_2",
+          "target": "tau_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Request_2",
+          "target": "zeta_1_2",
+          "context": [
+            "zeta_1_2"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 16
+        },
+        {
+          "action": "Request_2",
+          "target": "zeta_2_3",
+          "context": [
+            "zeta_2_3"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 16
+        },
+        {
+          "action": "Request_3",
+          "target": "tau_3",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Request_3",
+          "target": "zeta_1_3",
+          "context": [
+            "zeta_1_3"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 16
+        },
+        {
+          "action": "Request_3",
+          "target": "zeta_2_3",
+          "context": [
+            "zeta_2_3"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 16
+        },
+        {
+          "action": "Grant_1",
+          "target": "tau_1",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Grant_1",
+          "target": "tau_2",
+          "context": [
+            "tau_2"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 16
+        },
+        {
+          "action": "Grant_1",
+          "target": "tau_3",
+          "context": [
+            "tau_3"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 16
+        },
+        {
+          "action": "Grant_2",
+          "target": "tau_1",
+          "context": [
+            "tau_1"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 16
+        },
+        {
+          "action": "Grant_2",
+          "target": "tau_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Grant_2",
+          "target": "tau_3",
+          "context": [
+            "tau_3"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 16
+        },
+        {
+          "action": "Grant_3",
+          "target": "tau_1",
+          "context": [
+            "tau_1"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 16
+        },
+        {
+          "action": "Grant_3",
+          "target": "tau_2",
+          "context": [
+            "tau_2"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 16
+        },
+        {
+          "action": "Grant_3",
+          "target": "tau_3",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_1",
+          "target": "tau_1",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_1",
+          "target": "zeta_1_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_1",
+          "target": "zeta_1_3",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_2",
+          "target": "tau_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_2",
+          "target": "zeta_1_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_2",
+          "target": "zeta_2_3",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_3",
+          "target": "tau_3",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_3",
+          "target": "zeta_1_3",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_3",
+          "target": "zeta_2_3",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_1",
+          "target": "tau_1",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_1",
+          "target": "zeta_1_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_1",
+          "target": "zeta_1_3",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_2",
+          "target": "tau_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_2",
+          "target": "zeta_1_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_2",
+          "target": "zeta_2_3",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_3",
+          "target": "tau_3",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_3",
+          "target": "zeta_1_3",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_3",
+          "target": "zeta_2_3",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Release_1",
+          "target": "tau_1",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Release_1",
+          "target": "tau_2",
+          "context": [
+            "tau_2"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 16
+        },
+        {
+          "action": "Release_1",
+          "target": "tau_3",
+          "context": [
+            "tau_3"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 16
+        },
+        {
+          "action": "Release_2",
+          "target": "tau_1",
+          "context": [
+            "tau_1"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 16
+        },
+        {
+          "action": "Release_2",
+          "target": "tau_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Release_2",
+          "target": "tau_3",
+          "context": [
+            "tau_3"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 16
+        },
+        {
+          "action": "Release_3",
+          "target": "tau_1",
+          "context": [
+            "tau_1"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 16
+        },
+        {
+          "action": "Release_3",
+          "target": "tau_2",
+          "context": [
+            "tau_2"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 16
+        },
+        {
+          "action": "Release_3",
+          "target": "tau_3",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "explicit_edge_variables": 6,
+      "candidate_clauses": 10,
+      "declared_domain_states": 295245,
+      "enumerated_states": 295245,
+      "non_stutter_transitions": 1102248,
+      "semantic_frame_checks": 1102248,
+      "independent_endpoint_checks": 0,
+      "initialization_passed": true,
+      "safety_implication_passed": true,
+      "invariant_states": 112,
+      "affected_action_target_pairs": 80,
+      "full_context_clause_occurrences": 800,
+      "affected_only_clause_occurrences": 320,
+      "minimum_context_clause_occurrences": 36,
+      "maximum_minimum_context_cardinality": 1,
+      "elapsed_seconds": 0.52347,
+      "records": [
+        {
+          "action": "Request_1",
+          "target": "tau_1",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Request_1",
+          "target": "zeta_1_2",
+          "context": [
+            "zeta_1_2"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Request_1",
+          "target": "zeta_1_3",
+          "context": [
+            "zeta_1_3"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Request_1",
+          "target": "zeta_1_4",
+          "context": [
+            "zeta_1_4"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Request_2",
+          "target": "tau_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Request_2",
+          "target": "zeta_1_2",
+          "context": [
+            "zeta_1_2"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Request_2",
+          "target": "zeta_2_3",
+          "context": [
+            "zeta_2_3"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Request_2",
+          "target": "zeta_2_4",
+          "context": [
+            "zeta_2_4"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Request_3",
+          "target": "tau_3",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Request_3",
+          "target": "zeta_1_3",
+          "context": [
+            "zeta_1_3"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Request_3",
+          "target": "zeta_2_3",
+          "context": [
+            "zeta_2_3"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Request_3",
+          "target": "zeta_3_4",
+          "context": [
+            "zeta_3_4"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Request_4",
+          "target": "tau_4",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Request_4",
+          "target": "zeta_1_4",
+          "context": [
+            "zeta_1_4"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Request_4",
+          "target": "zeta_2_4",
+          "context": [
+            "zeta_2_4"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Request_4",
+          "target": "zeta_3_4",
+          "context": [
+            "zeta_3_4"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Grant_1",
+          "target": "tau_1",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Grant_1",
+          "target": "tau_2",
+          "context": [
+            "tau_2"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Grant_1",
+          "target": "tau_3",
+          "context": [
+            "tau_3"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Grant_1",
+          "target": "tau_4",
+          "context": [
+            "tau_4"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Grant_2",
+          "target": "tau_1",
+          "context": [
+            "tau_1"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Grant_2",
+          "target": "tau_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Grant_2",
+          "target": "tau_3",
+          "context": [
+            "tau_3"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Grant_2",
+          "target": "tau_4",
+          "context": [
+            "tau_4"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Grant_3",
+          "target": "tau_1",
+          "context": [
+            "tau_1"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Grant_3",
+          "target": "tau_2",
+          "context": [
+            "tau_2"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Grant_3",
+          "target": "tau_3",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Grant_3",
+          "target": "tau_4",
+          "context": [
+            "tau_4"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Grant_4",
+          "target": "tau_1",
+          "context": [
+            "tau_1"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Grant_4",
+          "target": "tau_2",
+          "context": [
+            "tau_2"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Grant_4",
+          "target": "tau_3",
+          "context": [
+            "tau_3"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Grant_4",
+          "target": "tau_4",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_1",
+          "target": "tau_1",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_1",
+          "target": "zeta_1_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_1",
+          "target": "zeta_1_3",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_1",
+          "target": "zeta_1_4",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_2",
+          "target": "tau_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_2",
+          "target": "zeta_1_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_2",
+          "target": "zeta_2_3",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_2",
+          "target": "zeta_2_4",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_3",
+          "target": "tau_3",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_3",
+          "target": "zeta_1_3",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_3",
+          "target": "zeta_2_3",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_3",
+          "target": "zeta_3_4",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_4",
+          "target": "tau_4",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_4",
+          "target": "zeta_1_4",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_4",
+          "target": "zeta_2_4",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Enter_4",
+          "target": "zeta_3_4",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_1",
+          "target": "tau_1",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_1",
+          "target": "zeta_1_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_1",
+          "target": "zeta_1_3",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_1",
+          "target": "zeta_1_4",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_2",
+          "target": "tau_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_2",
+          "target": "zeta_1_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_2",
+          "target": "zeta_2_3",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_2",
+          "target": "zeta_2_4",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_3",
+          "target": "tau_3",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_3",
+          "target": "zeta_1_3",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_3",
+          "target": "zeta_2_3",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_3",
+          "target": "zeta_3_4",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_4",
+          "target": "tau_4",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_4",
+          "target": "zeta_1_4",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_4",
+          "target": "zeta_2_4",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Exit_4",
+          "target": "zeta_3_4",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Release_1",
+          "target": "tau_1",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Release_1",
+          "target": "tau_2",
+          "context": [
+            "tau_2"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Release_1",
+          "target": "tau_3",
+          "context": [
+            "tau_3"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Release_1",
+          "target": "tau_4",
+          "context": [
+            "tau_4"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Release_2",
+          "target": "tau_1",
+          "context": [
+            "tau_1"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Release_2",
+          "target": "tau_2",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Release_2",
+          "target": "tau_3",
+          "context": [
+            "tau_3"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Release_2",
+          "target": "tau_4",
+          "context": [
+            "tau_4"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Release_3",
+          "target": "tau_1",
+          "context": [
+            "tau_1"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Release_3",
+          "target": "tau_2",
+          "context": [
+            "tau_2"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Release_3",
+          "target": "tau_3",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        },
+        {
+          "action": "Release_3",
+          "target": "tau_4",
+          "context": [
+            "tau_4"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Release_4",
+          "target": "tau_1",
+          "context": [
+            "tau_1"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Release_4",
+          "target": "tau_2",
+          "context": [
+            "tau_2"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Release_4",
+          "target": "tau_3",
+          "context": [
+            "tau_3"
+          ],
+          "cardinality": 1,
+          "oracle_calls": 2,
+          "distinct_bad_source_signatures": 256
+        },
+        {
+          "action": "Release_4",
+          "target": "tau_4",
+          "context": [],
+          "cardinality": 0,
+          "oracle_calls": 1,
+          "distinct_bad_source_signatures": 0
+        }
+      ]
+    }
+  ]
+}
