@@ -3,9 +3,15 @@
   "platform": "Windows-11-10.0.26200-SP0",
   "cpu": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
   "memory_gb": 31.627,
-  "git_commit": "fe23525330acfc721c01c3553549c0003c661f7b",
+  "git_commit": "457e5a73357b1da846b46d67ff52b8ccbfd45a22",
   "model_sha256": "52526871073f2fe2eee56113e48a63a3b7024796829d43c6bd82500bda47186c",
-  "runner_sha256": "f757e3b039bbbbfcca9032a5794816d91c053abfc658856a672ca2bc0dbc76f1",
+  "runner_sha256": "43f0ebc4d09a2fb5ba4bb9000f85abdbcb1a7015494b1ce12aca809d513ee4f4",
+  "artifact_sha256": {
+    "minimal_context_artifact.py": "305e32917d3f274080391fa1d4208987a3b7619a3bc6a74b4d0d7468b6806923",
+    "certificate_generation_artifact.py": "ad74534cd8c027b4494574646e6e60c9159420b3242b8de80897333ec484f101",
+    "verify_outputs.py": "1d9c6816e6a568eb1d5901b75a5af0afec91b57a9533d1b3cda46877c45aa187",
+    "make_tables_figures.py": "f1807da74a2c3799942044f2193e25c302c9b9e2f9b28d67ffd2afa1bf394c7a"
+  },
   "deterministic": true,
   "random_seed": null,
   "command": "python -m experiments.run_all"

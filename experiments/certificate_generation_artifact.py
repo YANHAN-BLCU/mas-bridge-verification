@@ -1,7 +1,7 @@
 """Finite-domain, fixed-template bridge-certificate construction and diagnosis.
 
 Run with Python 3 (standard library only).  The companion JSON is generated
-beside this file.  Input consists of finite variable domains, guarded parallel
+under ``experiments/results``.  Input consists of finite variable domains, guarded parallel
 assignment syntax, a safety target, explicit initial states, and a finite
 role-annotated template library.  This is not unrestricted invariant synthesis.
 Every declared Cartesian state, including inconsistent records, is enumerated.

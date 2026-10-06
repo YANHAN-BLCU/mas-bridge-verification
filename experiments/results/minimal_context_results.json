@@ -48,7 +48,7 @@
       "affected_only_clause_occurrences": 40,
       "minimum_context_clause_occurrences": 6,
       "maximum_minimum_context_cardinality": 1,
-      "elapsed_seconds": 0.000498,
+      "elapsed_seconds": 0.000488,
       "records": [
         {
           "action": "Request_1",
@@ -241,7 +241,7 @@
       "affected_only_clause_occurrences": 135,
       "minimum_context_clause_occurrences": 18,
       "maximum_minimum_context_cardinality": 1,
-      "elapsed_seconds": 0.013019,
+      "elapsed_seconds": 0.012678,
       "records": [
         {
           "action": "Request_1",
@@ -658,7 +658,7 @@
       "affected_only_clause_occurrences": 320,
       "minimum_context_clause_occurrences": 36,
       "maximum_minimum_context_cardinality": 1,
-      "elapsed_seconds": 0.52347,
+      "elapsed_seconds": 0.500355,
       "records": [
         {
           "action": "Request_1",
